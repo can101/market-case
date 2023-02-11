@@ -9,6 +9,8 @@ lerna-debug.log*
 
 node_modules
 package-lock.json
+vite-env.d.ts
+.eslintrc.cjs
 dist
 dist-ssr
 *.local
