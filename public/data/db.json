@@ -1,0 +1,254 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Apple",
+      "description": "A juicy and tasty red apple.",
+      "price": 0.99,
+      "category": "Fruit",
+      "image_url": "https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+    },
+    {
+      "id": 2,
+      "name": "Banana",
+      "description": "A sweet and creamy yellow banana.",
+      "price": 0.79,
+      "category": "Fruit",
+      "image_url": "https://images.unsplash.com/photo-1603833665858-e61d17a86224?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=327&q=80"
+    },
+    {
+      "id": 3,
+      "name": "Bread",
+      "description": "A soft and fluffy white bread.",
+      "price": 1.99,
+      "category": "Bakery",
+      "image_url": "https://images.unsplash.com/photo-1608198093002-ad4e005484ec?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80"
+    },
+    {
+      "id": 4,
+      "name": "Carrot",
+      "description": "A crunchy and sweet orange carrot.",
+      "price": 0.59,
+      "category": "Vegetable",
+      "image_url": "https://images.unsplash.com/photo-1590868309235-ea34bed7bd7f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=327&q=80"
+    },
+    {
+      "id": 5,
+      "name": "Cheese",
+      "description": "A creamy and tangy yellow cheese.",
+      "price": 2.99,
+      "category": "Dairy",
+      "image_url": "https://images.unsplash.com/photo-1552767059-ce182ead6c1b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Y2hlZXNlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=2000&q=60"
+    },
+    {
+      "id": 6,
+      "name": "Chicken",
+      "description": "A tender and juicy roasted chicken.",
+      "price": 7.99,
+      "category": "Meat",
+      "image_url": "https://images.unsplash.com/photo-1587593810167-a84920ea0781?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+    },
+    {
+      "id": 7,
+      "name": "Chips",
+      "description": "A crispy and salty potato chips.",
+      "price": 2.49,
+      "category": "Snacks",
+      "image_url": "https://images.unsplash.com/photo-1613919113640-25732ec5e61f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+    },
+    {
+      "id": 8,
+      "name": "Coffee",
+      "description": "A rich and flavorful dark roast coffee.",
+      "price": 1.99,
+      "category": "Beverage",
+      "image_url": "https://images.unsplash.com/photo-1447933601403-0c6688de566e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=761&q=80"
+    },
+    {
+      "id": 9,
+      "name": "Coke",
+      "description": "A classic and refreshing Coca-Cola.",
+      "price": 1.49,
+      "category": "Beverage",
+      "image_url": "https://images.unsplash.com/photo-1554866585-cd94860890b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80"
+    },
+    {
+      "id": 10,
+      "name": "Cucumber",
+      "description": "A cool and crisp green cucumber.",
+      "price": 0.69,
+      "category": "Vegetable",
+      "image_url": "https://images.unsplash.com/photo-1449300079323-02e209d9d3a6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+    },
+    {
+      "id": 11,
+      "name": "Donut",
+      "description": "A sweet and fluffy glazed donut.",
+      "price": 0.99,
+      "category": "Bakery",
+      "image_url": "https://images.unsplash.com/photo-1551024601-bec78aea704b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80"
+    },
+    {
+      "id": 12,
+      "name": "Eggs",
+      "description": "A delicious and nutritious eggs.",
+      "price": 1.99,
+      "category": "Dairy",
+      "image_url": "https://images.unsplash.com/photo-1498654077810-12c21d4d6dc3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+    },
+    {
+      "id": 13,
+      "name": "Fish",
+      "description": "A fresh and flavorful salmon fish.",
+      "price": 9.99,
+      "category": "Seafood",
+      "image_url": "https://images.unsplash.com/photo-1568727349390-7deb45c78797?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+    },
+    {
+      "id": 14,
+      "name": "Grapes",
+      "description": "A sweet and juicy green grapes.",
+      "price": 1.49,
+      "category": "Fruit",
+      "image_url": "https://images.unsplash.com/photo-1578829779691-99b60bd8c7be?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=767&q=80"
+    },
+    {
+      "id": 15,
+      "name": "Hamburger",
+      "description": "A juicy and delicious cheeseburger.",
+      "price": 3.99,
+      "category": "Fast food",
+      "image_url": "https://images.unsplash.com/photo-1619901282828-7cbde1c89884?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=520&q=80"
+    },
+    {
+      "id": 16,
+      "name": "Ice Cream",
+      "description": "A creamy and sweet vanilla ice cream.",
+      "price": 2.49,
+      "category": "Dessert",
+      "image_url": "https://images.unsplash.com/photo-1572837663132-76c0ccd9cb6f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+    },
+    {
+      "id": 17,
+      "name": "Juice",
+      "description": "A fresh and fruity orange juice.",
+      "price": 1.99,
+      "category": "Beverage",
+      "image_url": "https://images.unsplash.com/photo-1618724980108-a4d3856fd8f5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80"
+    },
+    {
+      "id": 18,
+      "name": "Lemon",
+      "description": "A sour and juicy yellow lemon.",
+      "price": 0.49,
+      "category": "Fruit",
+      "image_url": "https://images.unsplash.com/photo-1590502593747-42a996133562?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80"
+    },
+    {
+      "id": 19,
+      "name": "Lettuce",
+      "description": "A fresh and crisp green lettuce.",
+      "price": 0.99,
+      "category": "Vegetable",
+      "image_url": "https://images.unsplash.com/photo-1519897831810-a9a01aceccd1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1331&q=80"
+    },
+    {
+      "id": 20,
+      "name": "Milk",
+      "description": "A creamy and nutritious whole milk.",
+      "price": 1.99,
+      "category": "Dairy",
+      "image_url": "https://images.unsplash.com/photo-1563636619-e9143da7973b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80"
+    },
+    {
+      "id": 21,
+      "name": "Noodles",
+      "description": "A delicious and filling chicken noodle soup.",
+      "price": 2.99,
+      "category": "Asian cuisine",
+      "image_url": "https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+    },
+    {
+      "id": 22,
+      "name": "Orange",
+      "description": "A juicy and sweet orange.",
+      "price": 0.99,
+      "category": "Fruit",
+      "image_url": "https://images.unsplash.com/photo-1611080626919-7cf5a9dbab5b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80"
+    },
+    {
+      "id": 23,
+      "name": "Pizza",
+      "description": "A delicious and cheesy pepperoni pizza.",
+      "price": 5.99,
+      "category": "Fast food",
+      "image_url": "https://images.unsplash.com/photo-1588014164218-d9ecba01aaff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80"
+    },
+    {
+      "id": 24,
+      "name": "Rice",
+      "description": "A fluffy and flavorful basmati rice.",
+      "price": 1.49,
+      "category": "Grain",
+      "image_url": "https://images.unsplash.com/photo-1613758235256-43a7bdc21d82?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+    },
+    {
+      "id": 25,
+      "name": "Strawberries",
+      "description": "A sweet and juicy red strawberries.",
+      "price": 2.99,
+      "category": "Fruit",
+      "image_url": "https://images.unsplash.com/photo-1543528176-61b239494933?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1174&q=80"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Fruit"
+    },
+    {
+      "id": 2,
+      "name": "Bakery"
+    },
+    {
+      "id": 3,
+      "name": "Vegetable"
+    },
+    {
+      "id": 4,
+      "name": "Dairy"
+    },
+    {
+      "id": 5,
+      "name": "Meat"
+    },
+    {
+      "id": 6,
+      "name": "Snacks"
+    },
+    {
+      "id": 7,
+      "name": "Beverage"
+    },
+    {
+      "id": 8,
+      "name": "Seafood"
+    },
+    {
+      "id": 9,
+      "name": "Fast food"
+    },
+    {
+      "id": 10,
+      "name": "Dessert"
+    },
+    {
+      "id": 11,
+      "name": "Asian cuisine"
+    },
+    {
+      "id": 12,
+      "name": "Grain"
+    }
+  ]
+}
