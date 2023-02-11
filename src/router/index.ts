@@ -1,3 +1,3 @@
-import BaseRoot from "./root";
+import BaseRoot from './root';
 
 export default BaseRoot;
