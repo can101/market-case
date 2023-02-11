@@ -1,3 +1,3 @@
-import Favorites from './Home';
+import Home from './Home';
 
-export default Favorites;
+export default Home;
