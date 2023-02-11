@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from './basket.module.scss';
+import styles from './pnf.module.scss';
 
-function Home(): JSX.Element {
-  return <div className={styles.bg_dark}>Home</div>;
+function PageNotFound(): JSX.Element {
+  return <div className={styles.bg_dark}>PageNotFound</div>;
 }
 
-export default Home;
+export default PageNotFound;
