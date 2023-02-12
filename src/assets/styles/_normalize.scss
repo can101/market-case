@@ -427,9 +427,9 @@ input {
   line-height: normal;
 }
 
-// Address inconsistent `text-transform` inheritance for `button` and `select`.
+// Address inconsistent `text-transform` inheritance for `buttons` and `select`.
 // All other form control elements do not inherit `text-transform` values.
-// Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+// Correct `buttons` style inheritance in Chrome, Safari 5+, and IE 8+.
 // Correct `select` style inheritance in Firefox 4+ and Opera.
 
 button,
@@ -502,7 +502,7 @@ input {
     -webkit-box-sizing: content-box; // 2
     box-sizing: content-box;
 
-    // Remove inner padding and search cancel button in Safari 5 and Chrome
+    // Remove inner padding and search cancel buttons in Safari 5 and Chrome
     // on OS X.
     &::-webkit-search-cancel-button,
     &::-webkit-search-decoration {

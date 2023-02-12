@@ -2,6 +2,7 @@ module.exports = {
     env: {
         browser: true,
         es2021: true,
+        jest: true,
     },
     extends: ['plugin:react/recommended', 'standard-with-typescript', 'prettier'],
     overrides: [],
@@ -17,10 +18,13 @@ module.exports = {
         },
     },
     rules: {
+        'no-use-before-define': 'off',
+        // arrow functions used in react components
         '@typescript-eslint/no-unused-vars': 'error',
         'react/react-in-jsx-scope': 'error',
         'react/jsx-no-undef': 'error',
         'react/prop-types': 'error',
+        '@typescript-eslint/strict-boolean-expressions': 'off',
         'react/prefer-stateless-function': ['error', {'ignorePureComponents': true}],
         '@typescript-eslint/explicit-function-return-type': 'off',
         '@typescript-eslint/no-explicit-any': 'off',
