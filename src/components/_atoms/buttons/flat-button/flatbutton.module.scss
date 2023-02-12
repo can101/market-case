@@ -1,0 +1,35 @@
+@use '../../../../assets/styles/mixin' as *;
+
+.button {
+  height: 40px;
+  width: 100%;
+  border-radius: 75px;
+  @include align-center;
+  border: none;
+  color: #05C26A;
+
+  &:hover {
+    position: relative;
+    animate: pulse 2s infinite;
+  }
+
+  &__icon {
+    //background: yellow;
+    @include align-center;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+  }
+}
