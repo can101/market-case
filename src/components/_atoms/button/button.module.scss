@@ -1,0 +1,38 @@
+@use '../../../assets/styles/mixin' as *;
+
+.button {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  @include align-center;
+  border: 1px solid rgba(131, 127, 127, 0);
+  box-shadow: inset 0 0 9px 1px rgb(186, 236, 210);
+  color: #05C26A;
+  font-weight: bold;
+  font-size: 1.5rem;
+  position: relative;
+
+  &:hover {
+    border-color: #05C26A;
+    box-shadow: inset 0 0 9px 1px rgb(186, 236, 210);
+  }
+
+  &__icon {
+    //background: yellow;
+    @include align-center;
+  }
+
+  &__badge {
+    position: absolute;
+    top: 0px;
+    right: -5px;
+    background: #05C26A;
+    color: #fff;
+    width: 25px;
+    height: 25px;
+    @include align-center;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 50%;
+  }
+}
