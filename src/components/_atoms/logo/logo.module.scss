@@ -1,0 +1,7 @@
+@use "../../../assets/styles/mixin.scss" as *;
+
+.logo {
+  &__svg {
+   height: 40px;
+  }
+}
