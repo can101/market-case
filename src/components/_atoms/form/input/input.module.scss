@@ -1,0 +1,28 @@
+@use "../../../../assets/styles/mixin" as *;
+
+.input_box {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  &__input {
+    border: 2px solid rgb(243, 243, 243);
+    border-radius: 75px;
+    height: 50px;
+    background-color: rgb(243, 243, 243);
+    padding: 0 20px;
+    outline: none;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: rgb(0, 0, 0);
+    transition: all 0.5s ease;
+    &:placeholder {
+      color: rgb(248, 248, 248);
+    }
+    &:focus {
+      border-color:  #05c26a;
+      caret-color: #05c26a;
+      outline-offset: 15px;
+      background: transparent;
+    }
+  }
+}
