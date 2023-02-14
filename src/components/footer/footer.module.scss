@@ -1,0 +1,103 @@
+@use "../../assets/styles/mixin" as *;
+
+.footer {
+  @include align-center;
+  flex-direction: column;
+  row-gap: 15px;
+  background-color: #e2f8ee;
+  border-top-left-radius: 75px;
+  border-top-right-radius: 75px;
+  margin-top: 2.5rem;
+  min-height: 380px;
+  &__top {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    @include tablet {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    @include mobile {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    &__colmn {
+      margin: 0 15px;
+      @include tablet {
+        text-align: center;
+      }
+      @include mobile {
+        text-align: center;
+      }
+      &__title {
+        font-size: 1.2rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        color: #05c26a;
+        text-transform: capitalize;
+      }
+      &__link {
+        color: #000;
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+        &:hover {
+          color: #05c26a;
+          cursor: pointer;
+          transition: all 0.2s ease-in;
+          text-decoration: underline;
+        }
+      }
+      &__wrapper {
+      }
+    }
+  }
+  &__copyright {
+    padding: 10px;
+    display: flex;
+    &__text {
+      color: #000;
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+    }
+  }
+  &__social_list {
+    @include align-center;
+    flex-direction: column;
+    row-gap: 10px;
+    &__title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #05c26a;
+      text-transform: capitalize;
+    }
+    &__wrapper {
+      @include align-center;
+      gap: 10px;
+    }
+    &__icon {
+      @include align-center;
+      opacity: 0.5;
+      color: #000000;
+      &:hover {
+        opacity: 0.9;
+        cursor: pointer;
+        transition: all 0.3s ease-in;
+      }
+    }
+  }
+  &__payment_methods {
+    padding: 2px;
+    display: flex;
+    &__wrapper {
+      @include align-center;
+      gap: 5px;
+    }
+    &__list_item {
+      @include align-center;
+    }
+    &__icon {
+      @include align-center;
+      color: #000000;
+      opacity: 0.4;
+    }
+  }
+}
