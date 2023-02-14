@@ -2,6 +2,8 @@ import React from 'react';
 import type { FC, ReactElement, ReactNode } from 'react';
 import styles from './button.module.scss';
 
+type Size = 'xs' | 'sm' | 'md' | 'lg';
+
 export interface IButtonProps {
   onClick: () => void;
   title?: string;
@@ -10,7 +12,7 @@ export interface IButtonProps {
   className?: string;
   quanttiy?: number;
   type?: 'button' | 'submit' | 'reset';
-  size?: 'xs' | 'sm' | 'md' | 'lg';
+  size?: Size;
 }
 
 const Button: FC<IButtonProps> = ({ disabled = false, onClick, icon, type, title, quanttiy, size = 'lg', className = styles.button }): ReactElement => {
