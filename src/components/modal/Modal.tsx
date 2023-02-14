@@ -8,6 +8,7 @@ import ReactDOM from 'react-dom';
 export type Children = ReactFragment | ReactNode | ReactPortal | boolean | null | undefined;
 
 interface IModalProps {
+  title: string;
   children: Children;
   onClose: () => void;
 }
@@ -20,7 +21,7 @@ const modifiedBodyOverflow = () => {
   };
 };
 
-const Modal: FC<IModalProps> = ({ onClose, children }): ReactElement => {
+const Modal: FC<IModalProps> = ({ onClose, children, title }): ReactElement => {
   useEffect(() => {
     const removeBodyClass = modifiedBodyOverflow();
     return () => {
@@ -37,14 +38,14 @@ const Modal: FC<IModalProps> = ({ onClose, children }): ReactElement => {
         <div className={styles.wrapper__modal_content}>
           <div className={`${styles.wrapper__modal} ${animationClass}`}>
             <div className={styles.wrapper__modal__header}>
-              <div className={styles.wrapper__modal__header__title}>Modal</div>
+              <div className={styles.wrapper__modal__header__title}>{title}</div>
               <Button
                 size={'md'}
                 onClick={() => {
                   setIsAnim(false);
                   setTimeout(() => {
                     onClose();
-                  }, 600);
+                  }, 550);
                 }}
                 icon={<IoCloseSharp />}
               />
