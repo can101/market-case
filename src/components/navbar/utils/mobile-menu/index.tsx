@@ -6,6 +6,9 @@ import CircleIconButton from '../../../_atoms/buttons/circle-icon-button';
 import Modal from '../../../modal';
 import styles from './mobile-menu.module.scss';
 import Logo from '../../../_atoms/logo';
+import Switch from '../../../_atoms/form/toggle-switch';
+import SelectBox from '../../../_atoms/form/select';
+import { ICategory } from '../../../../types';
 
 interface IMobileMenuProps {
   onClick: (path: string) => void;
@@ -51,6 +54,31 @@ const MobileMenu: FC<IMobileMenuProps> = ({ onClick }) => {
                 onClick('/cart');
               }}
               icon={<SlBasket />}
+            />
+          </li>
+          <li className={styles.container__mobile_list__item}>
+            <div className={styles.container__mobile_list__item__inner}>
+              <span className={styles.container__mobile_list__item__inner__info_msg}>dark mode</span>
+              <Switch
+                size={'sm'}
+                onClick={function (): void {
+                  alert('switch');
+                }}
+              />
+            </div>
+          </li>
+          <li className={styles.container__mobile_list__item}>
+            <SelectBox
+              placeholder={'Select Language'}
+              options={[
+                { id: 1, name: 'turkish' },
+                { id: 2, name: 'english' },
+              ]}
+              value={''}
+              onClick={function (e: React.MouseEvent<HTMLElement, MouseEvent>, item: ICategory): void {
+                throw new Error('Function not implemented.');
+              }}
+              size={'auto'}
             />
           </li>
         </ul>
