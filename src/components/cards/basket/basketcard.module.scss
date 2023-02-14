@@ -1,0 +1,91 @@
+@use "../../../assets/styles/mixin.scss" as *;
+
+.basketcard {
+    padding: 5px;
+    &__container {
+        background-color: #e2f8ee;
+        border-radius: 20px;
+        display: flex;
+        gap: 10px;
+        padding: 10px;
+        @include tablet {
+            flex-direction: row;
+        }
+        @include mobile {
+            @include align-center;
+            flex-direction: column;
+            width: 80%;
+            margin: 0 auto;
+            min-height: 300px;
+        }
+        // background-color: chocolate;
+        &__item_image {
+            // background-color: darkblue;
+            @include align-center;
+            &__img {
+                height: 100px;
+                border-radius: 10px;
+                @include mobile {
+                    height: 150px;
+                }
+            }
+        }
+        &__item__info {
+            line-height: 1.5;
+            &__title {
+                color: #000000;
+                font-size: 1.1rem;
+                font-weight: 600;
+            }
+            &__description {
+                color: #a9adab;
+                letter-spacing: 1px;
+                font-size: 0.8rem;
+                font-weight: 400;
+            }
+            @include align-center;
+            flex-direction: column;
+            // background-color: rgb(139, 9, 0);
+            @include desktop {
+                flex: 1;
+            }
+            @include tablet {
+                flex: 1;
+            }
+        }
+        &__quantitiy_counter {
+            @include align-center;
+            // background-color: rgb(146, 255, 62);
+            @include desktop {
+                flex: 1;
+            }
+            @include tablet {
+                flex: 1;
+            }
+        }
+        &__price {
+            color: #05c26a;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            @include align-center;
+            // background-color: rgb(238, 20, 187);
+            @include desktop {
+                flex: 1;
+            }
+            @include tablet {
+                flex: 1;
+            }
+        }
+        &__remove {
+            @include align-center;
+            // background-color: rgb(255, 255, 0);
+            @include desktop {
+                flex: 1;
+            }
+            @include tablet {
+                flex: 1;
+            }
+        }
+    }
+}

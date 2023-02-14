@@ -1,0 +1,49 @@
+@use "../../assets/styles/mixin.scss" as *;
+
+@mixin dblock($value: block) {
+  display: $value;
+}
+
+.navbar {
+  height: 80px;
+  box-shadow: 0 8px 15px 0 #fff;
+  background-color: #ffffff;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 10;
+  user-select: none;
+  &__desktop_buttons {
+    @include mobile {
+      @include dblock(none);
+    }
+  }
+  &__mobile_buttons {
+    @include dblock(none);
+    @include mobile {
+      @include dblock;
+    }
+    @include extra-small {
+      @include dblock;
+    }
+  }
+  &__brand {
+    @include align-center;
+  }
+  &__list {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    &__buttons {
+      @include align-center;
+      gap: 10px;
+      &__item {
+        @include align-center;
+      }
+    }
+  }
+}

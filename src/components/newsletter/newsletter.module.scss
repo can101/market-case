@@ -1,0 +1,40 @@
+@use "../../assets/styles/mixin" as *;
+
+.newsletter {
+  height: 250px;
+  background: rgba(186, 236, 210, 0.459);
+  border-radius: 50px;
+  @include mobile {
+    width: 90%;
+    border-radius: 30px;
+  }
+
+  min-width: 250px;
+  max-width: 600px;
+  margin: 10px auto;
+  text-align: center;
+  @include align-center;
+  &__inner_content {
+    color: #05c26a;
+  }
+  &__title {
+    font-size: 1.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  &__description {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #000;
+    width: 80%;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+  &__form {
+    margin-top: 20px;
+    @include align-center;
+    &__control {
+      position: relative;
+    }
+  }
+}

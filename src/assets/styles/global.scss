@@ -1,2 +1,22 @@
-@import './_reset.scss';
-@import './_normalize.scss';
+@import "./_reset.scss";
+@import "./_normalize.scss";
+@import "./mixin.scss";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  @include custom-scrollbar;
+}
+
+*::selection {
+  background-color: #05c26a;
+  color: #fff;
+}
+
+* {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}

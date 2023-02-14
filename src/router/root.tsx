@@ -10,7 +10,7 @@ const router = [
     element: <Home />,
   },
   {
-    path: '/basket',
+    path: '/cart',
     element: <Basket />,
   },
   {
