@@ -36,7 +36,7 @@ const Modal: FC<IModalProps> = ({ onClose, children, title }): ReactElement => {
     <>
       <div className={`${styles.modal} ${blurAnimationClass}`}>
         <div className={`${styles.modal__inner} ${slideAnimationClass}`}>
-          <div className={styles.modal__inner__header}>
+          <div className={styles.modal__inner__header} id={'modal_header'}>
             <div className={styles.modal__inner__header__title}>{title}</div>
             <Button
               size={'md'}
