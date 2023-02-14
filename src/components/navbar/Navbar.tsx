@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { type ReactElement, type FC } from 'react';
 import styles from './navbar.module.scss';
 import Logo from '../../components/_atoms/logo';
 import { AiFillHeart } from 'react-icons/ai';
 import { SlBasket } from 'react-icons/sl';
-import { RiMenu4Line } from 'react-icons/ri';
 import { BsFillSunFill, BsFillMoonStarsFill } from 'react-icons/bs';
 import CircleIconButton from '../_atoms/buttons/circle-icon-button';
 import { Link, useNavigate } from 'react-router-dom';
-import Modal from '../modal';
+import MobileMenu from './utils/mobile-menu';
 
-function Navbar(): JSX.Element {
+const Navbar: FC = (): ReactElement => {
   const navigate = useNavigate();
+  const goToPath = (path: string): void => {
+    navigate(path);
+  };
   const [isDarkMode, setIsDarkMode] = React.useState(false);
   return (
     <nav className={styles.navbar}>
@@ -37,7 +39,7 @@ function Navbar(): JSX.Element {
               <CircleIconButton
                 size={'lg'}
                 onClick={() => {
-                  navigate('/favorites');
+                  goToPath('/favorites');
                 }}
                 icon={<AiFillHeart />}
               />
@@ -47,7 +49,7 @@ function Navbar(): JSX.Element {
                 quanttiy={2}
                 size={'lg'}
                 onClick={() => {
-                  navigate('/basket');
+                  goToPath('/cart');
                 }}
                 icon={<SlBasket />}
               />
@@ -55,20 +57,11 @@ function Navbar(): JSX.Element {
           </ul>
         </li>
         <li className={styles.navbar__mobile_buttons}>
-          {/* <CircleIconButton
-            size={'md'}
-            onClick={() => {
-              setIsDarkMode(!isDarkMode);
-            }}
-            icon={isDarkMode ? <CgClose /> : <RiMenu4Line />}
-          /> */}
-          <Modal icon={<RiMenu4Line />}>
-            <h1>hello</h1>
-          </Modal>
+          <MobileMenu onClick={goToPath} />
         </li>
       </ul>
     </nav>
   );
-}
+};
 
 export default Navbar;
