@@ -9,11 +9,13 @@ interface IInputProps {
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   icon?: ReactNode;
+  size?: 'sm' | 'md' | 'lg' | 'auto';
 }
 
-const Input: FC<IInputProps> = ({ type = 'text', placeholder, icon }): ReactElement => {
+const Input: FC<IInputProps> = ({ type = 'text', placeholder, icon, size = 'md' }): ReactElement => {
+  const classNames = styles[`input_box__${size}`];
   return (
-    <div className={styles.input_box}>
+    <div className={`${styles.input_box} ${classNames}`}>
       <input type={type} className={styles.input_box__input} placeholder={placeholder} />
       <div className={styles.input_box__button}></div>
       {icon && (
