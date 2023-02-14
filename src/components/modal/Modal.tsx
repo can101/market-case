@@ -30,27 +30,27 @@ const Modal: FC<IModalProps> = ({ onClose, children, title }): ReactElement => {
   }, []);
 
   const [isAnim, setIsAnim] = useState<boolean>(true);
-  const animationClass = styles[`wrapper__modal__${isAnim ? 'open' : 'close'}`];
+  const blurAnimationClass = styles[`modal__${isAnim ? 'open' : 'close'}`];
+  const slideAnimationClass = styles[`modal__inner__${isAnim ? 'open' : 'close'}`];
   return ReactDOM.createPortal(
     <>
-      <div className={styles.wrapper}>
-        <div className={styles.wrapper__overlay}></div>
-        <div className={styles.wrapper__modal_content}>
-          <div className={`${styles.wrapper__modal} ${animationClass}`}>
-            <div className={styles.wrapper__modal__header}>
-              <div className={styles.wrapper__modal__header__title}>{title}</div>
-              <Button
-                size={'md'}
-                onClick={() => {
-                  setIsAnim(false);
-                  setTimeout(() => {
-                    onClose();
-                  }, 550);
-                }}
-                icon={<IoCloseSharp />}
-              />
-            </div>
-            {children}
+      <div className={`${styles.modal} ${blurAnimationClass}`}>
+        <div className={`${styles.modal__inner} ${slideAnimationClass}`}>
+          <div className={styles.modal__inner__header}>
+            <div className={styles.modal__inner__header__title}>{title}</div>
+            <Button
+              size={'md'}
+              onClick={() => {
+                setIsAnim(false);
+                setTimeout(() => {
+                  onClose();
+                }, 500);
+              }}
+              icon={<IoCloseSharp />}
+            />
+          </div>
+          <div className={styles.modal__inner__body}>
+            <div className={styles.modal__inner__body__content}>{children}</div>
           </div>
         </div>
       </div>
