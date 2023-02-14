@@ -1,0 +1,77 @@
+@use "../../assets/styles/mixin" as *;
+
+$duration: 0.6s;
+
+.wrapper {
+    background-color: aqua;
+    &__overlay {
+        background-color: rgba(255, 255, 255, 0);
+        backdrop-filter: blur(5px);
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        z-index: 100;
+    }
+    &__modal_content {
+        position: absolute;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        @include align-center;
+    }
+    &__modal {
+        &__open {
+            animation: scaleFadeIn $duration ease-in-out;
+        }
+        &__close {
+            animation: scaleFadeOut $duration ease-in-out;
+        }
+        background-color: rgb(255, 255, 255);
+        padding: 25px;
+        border-radius: 20px;
+        width: 50%;
+        height: 50%;
+        min-height: 250px;
+        min-width: 300px;
+        @include mobile {
+            width: 100%;
+            height: 100%;
+            border-radius: 0;
+        }
+        &__header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            &__title {
+                color: #05c26a;
+                letter-spacing: 1px;
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+
+@keyframes scaleFadeIn {
+    0% {
+        transform: translateY(-100%) scale(0.1);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+@keyframes scaleFadeOut {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100%) scale(0.1);
+        opacity: 0;
+    }
+}
