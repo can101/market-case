@@ -1,6 +1,6 @@
 import React from 'react';
 import { FiSend } from 'react-icons/fi';
-import Input from '../_atoms/Form/input';
+import Input from '../_atoms/form/input';
 import styles from './newsletter.module.scss';
 
 function Navbar(): JSX.Element {
