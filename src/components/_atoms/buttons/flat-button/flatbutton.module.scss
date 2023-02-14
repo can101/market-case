@@ -7,8 +7,20 @@
   @include align-center;
   border: none;
   color: #05c26a;
-  margin-top: 5px;
-
+  margin-top: 15px;
+  text-transform: capitalize;
+  &__sm {
+    width: 100px;
+  }
+  &__md {
+    width: 150px;
+  }
+  &__lg {
+    width: 200px;
+  }
+  &__auto {
+    width: auto;
+  }
   &:hover {
     position: relative;
     animation: pulse 2s infinite;

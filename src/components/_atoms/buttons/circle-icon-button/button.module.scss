@@ -1,19 +1,37 @@
-@use '../../../../assets/styles/mixin' as *;
+@use "../../../../assets/styles/mixin" as *;
 
 .button {
-  height: 60px;
-  width: 60px;
   border-radius: 50%;
   @include align-center;
   border: 1px solid rgba(131, 127, 127, 0);
   box-shadow: inset 0 0 9px 1px rgb(186, 236, 210);
-  color: #05C26A;
+  color: #05c26a;
   font-weight: bold;
-  font-size: 1.5rem;
   position: relative;
 
-  &:hover {
-    border-color: #05C26A;
+  &__xs {
+    height: 30px;
+    width: 30px;
+    font-size: 0.8rem;
+  }
+  &__sm {
+    height: 40px;
+    width: 40px;
+    font-size: 1.2rem;
+  }
+  &__md {
+    height: 50px;
+    width: 50px;
+    font-size: 1.4rem;
+  }
+  &__lg {
+    height: 60px;
+    width: 60px;
+    font-size: 1.6rem;
+  }
+
+  &:hover:not(&:disabled) {
+    border-color: #05c26a;
     box-shadow: inset 0 0 9px 1px rgb(186, 236, 210);
   }
 
@@ -26,7 +44,7 @@
     position: absolute;
     top: 0px;
     right: -5px;
-    background: #05C26A;
+    background: #05c26a;
     color: #fff;
     width: 25px;
     height: 25px;
@@ -34,5 +52,9 @@
     font-size: 12px;
     font-weight: bold;
     border-radius: 50%;
+  }
+
+  &:disabled {
+    filter: grayscale(100%);
   }
 }
