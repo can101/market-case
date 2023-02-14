@@ -2,9 +2,21 @@
 
 .logo {
   &__svg {
-   height: 40px;
-   @include mobile {
-     height: 30px;
-   }
+    height: 40px;
+    @include mobile {
+      height: 30px;
+    }
+    &__xs {
+      height: 20px !important;
+    }
+    &__sm {
+      height: 30px !important;
+    }
+    &__md {
+      height: 40px !important;
+    }
+    &__lg {
+      height: 50px !important;
+    }
   }
 }
