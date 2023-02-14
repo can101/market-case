@@ -1,60 +1,88 @@
 @use "../../../../assets/styles/mixin" as *;
 
-.button {
-  border-radius: 50%;
+.container {
   @include align-center;
-  border: 1px solid rgba(131, 127, 127, 0);
-  box-shadow: inset 0 0 9px 1px rgb(186, 236, 210);
-  color: #05c26a;
-  font-weight: bold;
-  position: relative;
+  gap: 15px;
 
-  &__xs {
-    height: 30px;
-    width: 30px;
-    font-size: 0.8rem;
-  }
-  &__sm {
-    height: 40px;
-    width: 40px;
-    font-size: 1.2rem;
-  }
-  &__md {
-    height: 50px;
-    width: 50px;
-    font-size: 1.4rem;
-  }
-  &__lg {
-    height: 60px;
-    width: 60px;
-    font-size: 1.6rem;
-  }
-
-  &:hover:not(&:disabled) {
-    border-color: #05c26a;
-    box-shadow: inset 0 0 9px 1px rgb(186, 236, 210);
-  }
-
-  &__icon {
-    //background: yellow;
-    @include align-center;
-  }
-
-  &__badge {
-    position: absolute;
-    top: 0px;
-    right: -5px;
-    background: #05c26a;
-    color: #fff;
-    width: 25px;
-    height: 25px;
-    @include align-center;
-    font-size: 12px;
-    font-weight: bold;
+  &__button {
     border-radius: 50%;
-  }
+    @include align-center;
+    border: 1px solid rgba(131, 127, 127, 0);
+    box-shadow: inset 0 0 9px 1px rgb(186, 236, 210);
+    color: #05c26a;
+    font-weight: bold;
+    position: relative;
 
-  &:disabled {
-    filter: grayscale(100%);
+    &__xs {
+      height: 30px;
+      width: 30px;
+      font-size: 0.8rem;
+    }
+    &__sm {
+      height: 40px;
+      width: 40px;
+      font-size: 1.2rem;
+    }
+    &__md {
+      height: 50px;
+      width: 50px;
+      font-size: 1.4rem;
+    }
+    &__lg {
+      height: 60px;
+      width: 60px;
+      font-size: 1.6rem;
+    }
+    &__auto {
+      height: 60px;
+      width: 100%;
+      justify-content: center;
+      text-align: left;
+      border-radius: 75px;
+      gap: 20px;
+      .container__button__icon {
+        font-size: 2rem;
+        position: relative;
+      }
+      .container__button__badge {
+        top: -8px;
+        left: 20px;
+      }
+    }
+
+    &:hover:not(&:disabled) {
+      border-color: #05c26a;
+      box-shadow: inset 0 0 9px 1px rgb(186, 236, 210);
+    }
+
+    &__icon {
+      @include align-center;
+    }
+
+    &__badge {
+      position: absolute;
+      top: 0px;
+      right: -5px;
+      background: #05c26a;
+      color: #fff;
+      width: 25px;
+      height: 25px;
+      @include align-center;
+      font-size: 12px;
+      font-weight: bold;
+      border-radius: 50%;
+    }
+
+    &:disabled {
+      filter: grayscale(100%);
+    }
+    &__title {
+      font-size: 1.2rem;
+      letter-spacing: 1px;
+      font-weight: 400;
+      color: #05c26a;
+      text-transform: capitalize;
+      cursor: pointer;
+    }
   }
 }
