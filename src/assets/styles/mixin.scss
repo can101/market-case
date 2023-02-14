@@ -1,4 +1,10 @@
 // breakpoint mixin
+@mixin smallmobile {
+  @media (max-width: 576px) {
+    @content;
+  }
+}
+
 @mixin mobile {
   @media (max-width: 768px) {
     @content;
@@ -28,3 +34,24 @@
   @include align(center);
 }
 
+// scroll mixin
+@mixin custom-scrollbar($color: #05c26a, $bg-color: #f0f0f0) {
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $color;
+    border-radius: 10px;
+    &:hover{
+      background-color: darken($color, 5%);
+    }
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: $bg-color;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 5px;
+  }
+}
