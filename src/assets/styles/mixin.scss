@@ -1,6 +1,6 @@
 // breakpoint mixin
-@mixin smallmobile {
-  @media (max-width: 576px) {
+@mixin extra-small {
+  @media (max-width: 575px) {
     @content;
   }
 }
