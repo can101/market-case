@@ -1,8 +1,8 @@
-import {configureStore} from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit';
 import rootReducer from './rootReducer';
-import {persistStore, persistReducer} from 'redux-persist'
+import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
-import {encryptTransform} from 'redux-persist-transform-encrypt';
+import { encryptTransform } from 'redux-persist-transform-encrypt';
 
 const transform = encryptTransform({
     secretKey: 'test',
@@ -11,12 +11,15 @@ const transform = encryptTransform({
     }
 });
 
+const whitelist = ['products', 'categories', 'theme'];
+const blacklist = ['products', 'categories'];
+
 const rootPersistConfig = {
     key: 'root',
     storage,
     transforms: [transform],
-    whitelist: ['basket', 'favorites'],
-    blacklist: ['products', 'categories']
+    whitelist: whitelist,
+    blacklist: blacklist
 }
 
 const persistedReducer = persistReducer(rootPersistConfig, rootReducer)
