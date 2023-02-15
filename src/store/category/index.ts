@@ -1,7 +1,7 @@
-import {createSlice} from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 // import type { PayloadAction } from '@reduxjs/toolkit'
-import type {ICategoryState} from '@/types';
-import {getAllCategoryAsyncThunk} from './getAllCategoryAsyncThunk';
+import type { ICategoryState } from '@/types';
+import { getAllCategoryAsyncThunk } from './getAllCategoryAsyncThunk';
 
 
 const initialState: ICategoryState = {
@@ -18,6 +18,7 @@ const categorySlice = createSlice({
         builder.addCase(getAllCategoryAsyncThunk.pending, (state) => {
             state.loading = true;
         }).addCase(getAllCategoryAsyncThunk.fulfilled, (state, action) => {
+            action.payload.unshift({ id: 0, name: 'All' });
             state.items = action.payload;
             state.loading = false;
             state.error = '';
