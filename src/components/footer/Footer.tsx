@@ -4,6 +4,7 @@ import type { FC, ReactElement, ReactNode } from 'react';
 // icons import start here
 import { IconContext } from 'react-icons';
 import { FaCcVisa, FaCcMastercard, FaFacebook, FaTwitter, FaInstagram, FaYoutube } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
 // icons import end here
 
 interface IData {
@@ -12,6 +13,7 @@ interface IData {
 }
 
 const Footer: FC = (): ReactElement => {
+  const { t } = useTranslation();
   const socialIcons: IData[] = [
     {
       id: 1,
@@ -44,35 +46,35 @@ const Footer: FC = (): ReactElement => {
     <footer className={styles.footer}>
       <div className={styles.footer__top}>
         <div className={styles.footer__top__colmn}>
-          <h3 className={styles.footer__top__colmn__title}>Information</h3>
+          <h3 className={styles.footer__top__colmn__title}>{t('footer.information')}</h3>
           <ul className={styles.footer__top__colmn__wrapper}>
-            <li className={styles.footer__top__colmn__link}>About Us</li>
-            <li className={styles.footer__top__colmn__link}>Delivery Information</li>
-            <li className={styles.footer__top__colmn__link}>Privacy Policy</li>
-            <li className={styles.footer__top__colmn__link}>Terms & Conditions</li>
+            <li className={styles.footer__top__colmn__link}>{t('footer.about_us')}</li>
+            <li className={styles.footer__top__colmn__link}>{t('footer.delivery_information')}</li>
+            <li className={styles.footer__top__colmn__link}>{t('footer.privacy_policy')}</li>
+            <li className={styles.footer__top__colmn__link}>{t('footer.term_condition')}</li>
           </ul>
         </div>
         <div className={styles.footer__top__colmn}>
-          <h3 className={styles.footer__top__colmn__title}>Customer Service</h3>
+          <h3 className={styles.footer__top__colmn__title}>{t('footer.customer_sevice')}</h3>
           <ul className={styles.footer__top__colmn__wrapper}>
-            <li className={styles.footer__top__colmn__link}>Contact Us</li>
+            <li className={styles.footer__top__colmn__link}>{t('footer.contact_us')}</li>
           </ul>
         </div>
         <div className={styles.footer__top__colmn}>
-          <h3 className={styles.footer__top__colmn__title}>My Account</h3>
+          <h3 className={styles.footer__top__colmn__title}>{t('footer.account_info')}</h3>
           <ul className={styles.footer__top__colmn__wrapper}>
-            <li className={styles.footer__top__colmn__link}>My Account</li>
-            <li className={styles.footer__top__colmn__link}>Order History</li>
-            <li className={styles.footer__top__colmn__link}>Wish List</li>
-            <li className={styles.footer__top__colmn__link}>Newsletter</li>
+            <li className={styles.footer__top__colmn__link}>{t('footer.my_account')}</li>
+            <li className={styles.footer__top__colmn__link}>{t('footer.order_history')}</li>
+            <li className={styles.footer__top__colmn__link}>{t('footer.whish_list')}</li>
+            <li className={styles.footer__top__colmn__link}>{t('footer.newsletter')}</li>
           </ul>
         </div>
       </div>
       <div className={styles.footer__copyright}>
-        <p className={styles.footer__copyright__text}>© 2023, All Rights Reserved</p>
+        <p className={styles.footer__copyright__text}>{t('footer.rights')}</p>
       </div>
       <div className={styles.footer__social_list}>
-        <span className={styles.footer__social_list__title}>Flow us</span>
+        <span className={styles.footer__social_list__title}>{t('footer.flow_us')}</span>
         <IconContext.Provider value={{ size: '1.5em', className: styles.footer__social_list__icon }}>
           <ul className={styles.footer__social_list__wrapper}>
             {socialIcons.map((item) => {

@@ -6,15 +6,15 @@ import type { ICategory } from '@/types';
 interface ISelectProps {
   placeholder: string;
   options: ICategory[];
-  value: string;
-  onClick: (e: React.MouseEvent<HTMLElement>, item: ICategory) => void;
+  value?: ICategory;
+  onClick: (item: ICategory) => void;
   isGray?: boolean;
   size: 'sm' | 'md' | 'lg' | 'auto';
 }
 
-const SelectBox: FC<ISelectProps> = ({ options, placeholder, isGray = false, onClick, size = 'lg' }): ReactElement => {
+const SelectBox: FC<ISelectProps> = ({ options, placeholder, isGray = false, onClick, size = 'lg', value = { id: 0, name: '' } }): ReactElement => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState<ICategory>({ id: 0, name: '' });
+  const [selectedOption, setSelectedOption] = useState<ICategory>(value);
   const className = styles[`select__${size}`];
   const toggleOpen = (bool?: boolean): void => {
     setIsOpen(bool ?? !isOpen);
@@ -42,11 +42,12 @@ const SelectBox: FC<ISelectProps> = ({ options, placeholder, isGray = false, onC
           <ul>
             {options.map((option) => (
               <li
+                aria-disabled={option.id === selectedOption.id}
                 key={option.id}
                 className={`${styles.select__option} ${selectedOption.id === option.id ? styles.select__option__selected : ''}`}
                 onClick={(e: React.MouseEvent<HTMLElement>): void => {
                   setSelectedOption(option);
-                  onClick(e, option);
+                  onClick(option);
                 }}
               >
                 {option.name}
