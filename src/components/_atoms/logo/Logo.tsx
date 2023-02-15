@@ -6,7 +6,7 @@ interface ILogoProps {
   size?: 'xs' | 'sm' | 'md' | 'lg';
 }
 
-const ProductCard: FC<ILogoProps> = ({ size = 'sm' }): ReactElement => {
+const ProductCard: FC<ILogoProps> = ({ size = 'md' }): ReactElement => {
   const sizeClass = styles[`logo__svg__${size}`];
   return (
     <article className={styles.logo}>
