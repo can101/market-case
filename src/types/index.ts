@@ -40,3 +40,10 @@ export interface ICategoryState {
 export interface IThemeState {
     theme: string;
 }
+
+export interface ISortBy {
+    id: number;
+    name: string;
+    nameSpace: string;
+    isReverse: boolean;
+}
