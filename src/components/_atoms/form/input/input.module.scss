@@ -1,0 +1,49 @@
+@use "@assets/styles/mixin" as *;
+@use "@assets/styles/variables" as *;
+
+.input_box {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 50px;
+  &__sm {
+    width: 200px;
+  }
+  &__md {
+    width: 250px;
+  }
+  &__lg {
+    width: 300px;
+  }
+  &__auto {
+    width: 100%;
+  }
+  &__icon {
+    position: absolute;
+    @include align-center;
+    height: 100%;
+    top: 0;
+    right: 7px;
+  }
+  &__input {
+    border: 2px solid $icegrey;
+    border-radius: 75px;
+    height: 50px;
+    background-color: $icegrey;
+    padding: 0 20px;
+    outline: none;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: $black;
+    transition: all 0.5s ease;
+    &:placeholder {
+      color: $icegrey;
+    }
+    &:focus {
+      border-color: $jadegreen;
+      caret-color: $jadegreen;
+      outline-offset: 15px;
+      background: transparent;
+    }
+  }
+}

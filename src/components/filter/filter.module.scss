@@ -1,0 +1,26 @@
+@use "@assets/styles//mixin.scss" as *;
+
+.filter {
+    @include align-center;
+    gap: 15px;
+    margin: 10px 0;
+    @include tablet {
+        flex-direction: column;
+    }
+    @include mobile {
+        flex-direction: column;
+    }
+    &__right_box {
+        display: flex;
+        gap: 10px;
+        @include tablet {
+            flex-direction: row;
+        }
+        @include mobile {
+            flex-direction: row;
+        }
+        @include extra-small {
+            flex-direction: column;
+        }
+    }
+}

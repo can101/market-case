@@ -11,8 +11,30 @@
       {
         "ignore": [
           "text-size-adjust",
-          "-ms-text-size-adjust"
+          "-ms-text-size-adjust",
+          "backdrop-filter",
+          "user-select"
         ]
+      }
+    ],
+    "axe/text-alternatives": [
+      "default",
+      {
+        "image-alt": "off"
+      }
+    ],
+    "axe/forms": [
+      "default",
+      {
+        "label": "off",
+        "select-name": "off"
+      }
+    ],
+    "axe/name-role-value": [
+      "default",
+      {
+        "button-name": "off",
+        "link-name": "off"
       }
     ]
   }

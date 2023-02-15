@@ -1,0 +1,85 @@
+@use "@assets/styles/mixin.scss" as *;
+
+.basketcard {
+    padding: 5px;
+    &__container {
+        background-color: var(--oceanBreeze);
+        border-radius: 20px;
+        display: flex;
+        gap: 10px;
+        padding: 10px;
+        @include tablet {
+            flex-direction: row;
+        }
+        @include mobile {
+            @include align-center;
+            flex-direction: column;
+            width: 80%;
+            margin: 0 auto;
+            min-height: 300px;
+        }
+        &__item_image {
+            @include align-center;
+            &__img {
+                height: 100px;
+                border-radius: 10px;
+                @include mobile {
+                    height: 150px;
+                }
+            }
+        }
+        &__item__info {
+            line-height: 1.5;
+            &__title {
+                color: var(--dark);
+                font-size: 1.1rem;
+                font-weight: 600;
+            }
+            &__description {
+                color: var(--slate);
+                letter-spacing: 1px;
+                font-size: 0.8rem;
+                font-weight: 400;
+            }
+            @include align-center;
+            flex-direction: column;
+            @include desktop {
+                flex: 1;
+            }
+            @include tablet {
+                flex: 1;
+            }
+        }
+        &__quantitiy_counter {
+            @include align-center;
+            @include desktop {
+                flex: 1;
+            }
+            @include tablet {
+                flex: 1;
+            }
+        }
+        &__price {
+            color: var(--jadeGreen);
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            @include align-center;
+            @include desktop {
+                flex: 1;
+            }
+            @include tablet {
+                flex: 1;
+            }
+        }
+        &__remove {
+            @include align-center;
+            @include desktop {
+                flex: 1;
+            }
+            @include tablet {
+                flex: 1;
+            }
+        }
+    }
+}

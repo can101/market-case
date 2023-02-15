@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 // import type { PayloadAction } from '@reduxjs/toolkit'
-import type { IProductState } from '../../types';
+import type { IProductState } from '@/types';
 import { getAllProductsAsyncThunk } from './getAllProductsAsyncThunk';
 
 

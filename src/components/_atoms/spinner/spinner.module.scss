@@ -1,0 +1,35 @@
+@use '@assets/styles/mixin' as *;
+@use '@assets/styles/variables' as *;
+
+.spinner {
+  @include align-center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(5px);
+  background: $glassgrey;
+  z-index: 9999;
+
+  &__item {
+    @include align-center;
+    height: 50px;
+    width: 50px;
+    font-size: 3rem;
+    color: var(--jadeGreen);
+    border: 3px solid var(--light);
+    border-radius: 50%;
+    border-top-color: var(--jadeGreen);
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

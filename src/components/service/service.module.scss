@@ -1,0 +1,38 @@
+@use "@assets/styles/mixin.scss" as *;
+
+.service {
+  width: 100%;
+  min-height: 15rem;
+  @include align-center;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include mobile {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  &__item {
+    height: 200px;
+    width: 200px;
+    @include align-center;
+  }
+  &__inner_content {
+    display: flex;
+    flex-direction: column-reverse;
+    @include align-center;
+  }
+
+  &__title {
+    color: var(--jadeGreen);
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+  &__image {
+    height: 8rem;
+  }
+}

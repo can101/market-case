@@ -1,2 +1,56 @@
-@import './_reset.scss';
-@import './_normalize.scss';
+@import "./_reset.scss";
+@import "./_normalize.scss";
+@import "./mixin.scss";
+@import "./variables.scss";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  @include custom-scrollbar;
+}
+
+*::selection {
+  background-color: var(--jadeGreen);
+  color: var(--light);
+}
+
+* {
+  -webkit-tap-highlight-color: $transparent;
+}
+
+html[data-theme="light"] {
+  --jadeGreen: #05c26a;
+  --emerald: #35DFA1;
+  --paleJade: #baecd2;
+  --oceanBreeze: #e2f8ee;
+  --light: #ffffff;
+  --lightGrey: #f0f0f0;
+  --greyMist: #f3f3f3;
+  --dustyGrey: #f5f5f5;
+  --dark: #000000;
+  --slate: #a9adab;
+  --ebony: #cccccc;
+  --onyx: #837f7f;
+}
+html[data-theme="dark"] {
+  --jadeGreen: #05c26a;
+  --emerald: #35DFA1;
+  --paleJade: #baecd2;
+  --oceanBreeze: #e2f8ee;
+  --light: #000000;
+  --lightGrey: #9d9d9d;
+  --greyMist: #dadada;
+  --dustyGrey: #e5e5e5;
+  --dark: #ffffff;
+  --slate: #7e8281;
+  --ebony: #999999;
+  --onyx: #a29f9f;
+}
+
+body {
+  background-color: var(--light);
+}

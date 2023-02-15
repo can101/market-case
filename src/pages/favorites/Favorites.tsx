@@ -1,8 +1,21 @@
 import React from 'react';
-import styles from './favorites.module.scss';
+import type { FC, ReactElement } from 'react';
+// import styles from './favorites.module.scss';
+import EmptyLayout, { type IEmptyProps } from '@layouts/empty';
+import favoriteJson from '@assets/json/favorite.json';
 
-function Favorites(): JSX.Element {
-  return <div className={styles.bg_dark}>Favorites</div>;
-}
+const Favorites: FC = (): ReactElement => {
+  const emptyProps: IEmptyProps = {
+    title: 'start shopping',
+    infoMessage: 'Your Favorites List Is Not Yet Empty',
+    path: '/',
+    srcjson: favoriteJson,
+  };
+  return (
+    <>
+      <EmptyLayout {...emptyProps} />
+    </>
+  );
+};
 
 export default Favorites;
