@@ -1,5 +1,6 @@
 {
   "language": "Türkçe",
+  "not_found_data": "Aradığınız veri bulunamadı.",
   "go_to_home": "Anasayfaya Git",
   "start_shopping": "Alışverişe Başla",
   "empty_favorite_msg": "Favorileriniz Boş",
@@ -8,11 +9,11 @@
   "order_samuray": "Siparişiniz Özeti",
   "subtotal": "Ara Toplam",
   "confirm_order": "Siparişi Onayla",
+  "theme_info": "tema {{value}}",
   "navbar": {
     "title": "Menü",
     "favorites": "Favorilerim",
-    "cart": "Sepetim",
-    "theme_info": "tema {{value}}"
+    "cart": "Sepetim"
   },
   "slect_language": {
     "language": "Dil Seçimi",
