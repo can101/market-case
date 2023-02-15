@@ -1,4 +1,4 @@
-@use "../../../../assets/styles//mixin.scss" as *;
+@use "@assets/styles/mixin.scss" as *;
 .container {
     width: 100%;
     height: 100%;
@@ -19,6 +19,7 @@
                @include align-center;
                gap: 10px;
                 &__info_msg {
+                    color: var(--dark);
                 }
             }
         }

@@ -1,9 +1,10 @@
 @use "@assets/styles/mixin.scss" as *;
+@use "@assets/styles/variables.scss" as *;
 
 .productCard {
   border: 1px solid rgba(131, 127, 127, 0);
-  box-shadow: inset 0 0 9px 1px rgb(186, 236, 210);
-  color: #05c26a;
+  box-shadow: inset 0 0 9px 1px $softgreen;
+  color: var(--jadeGreen);
   @include align-center;
   justify-content: space-around;
   align-items: stretch;
@@ -40,19 +41,19 @@
   &__title {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #000;
+    color: var(--dark);
   }
 
   &__description {
     font-size: 0.9rem;
     font-weight: 400;
-    color: #000;
+    color: var(--dark);
   }
   &__price {
     font-size: 1rem;
     font-weight: 500;
-    color: #ffffff;
-    background: #05c26a;
+    color: var(--light);
+    background: var(--jadeGreen);
     width: 50%;
     height: 40px;
     @include align-center;
@@ -66,8 +67,8 @@
   }
 
   &__category {
-    background: rgb(186, 236, 210);
-    color: #05c26a;
+    background: var(--paleJade);
+    color: var(--jadeGreen);
     width: 50%;
     height: 40px;
     border-radius: 20px;
@@ -101,7 +102,7 @@
   }
 
   &:hover {
-    border-color: #05c26a;
-    box-shadow: inset 0 0 9px 1px rgb(186, 236, 210);
+    border-color: var(--jadeGreen);
+    box-shadow: inset 0 0 9px 1px var(--paleJade);
   }
 }

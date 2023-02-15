@@ -2,13 +2,10 @@
 
 .basket {
   &__card_box {
-    border: 1px solid #05c26a;
+    border: 1px solid var(--jadeGreen);
     border-radius: 25px;
-    // width: 90%;
-    // margin: 0 auto;
     gap: 10px;
     margin-bottom: 20px;
-    // height: 200px;
     padding: 20px;
   }
   display: grid;
@@ -33,31 +30,28 @@
     padding: 10px;
     overflow-y: auto;
     max-height: 500px;
-    // border: 1px solid #e6e6e6;
     @include custom-scrollbar;
     &__title {
       font-size: 1.3rem;
       font-weight: 500;
       letter-spacing: 1px;
       margin-bottom: 10px;
-      color: #000000;
+      color: var(--dark);
     }
     &__content {
       &__price {
         text-align: center;
         display: flex;
         width: 100%;
-        background-color: rgba(186, 236, 210, 0.459);
+        background-color: var(--oceanBreeze);
         padding: 15px;
         border-radius: 10px;
         font-size: 1rem;
         font-weight: 500;
         &__title {
           margin-right: 10px;
-          // background-color: azure;
         }
         &__value {
-          // background-color: azure;
         }
       }
     }

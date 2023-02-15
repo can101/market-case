@@ -4,7 +4,7 @@
   @include align-center;
   column-gap: 5px;
   &__counter {
-    color: #05c26a;
+    color: var(--jadeGreen);
     font-size: 1.5rem;
     border-radius: 7px;
     padding: 10px;

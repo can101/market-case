@@ -2,6 +2,7 @@
 
 .logo {
   &__svg {
+    fill: var(--jadeGreen);
     height: 40px;
     @include mobile {
       height: 30px;
