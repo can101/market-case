@@ -32,7 +32,7 @@ const MobileMenu: FC<IMobileMenuProps> = ({
   const { t } = useTranslation();
   return (
     <>
-      <li className={styles.container__mobile_list__item}>
+      <li className={`${styles.container__mobile_list__item} ${styles.container__mobile_list__item__only_mobile}`}>
         <CircleIconButton
           size={'auto'}
           title={t('navbar.favorites') as string}
@@ -43,7 +43,7 @@ const MobileMenu: FC<IMobileMenuProps> = ({
           icon={<AiFillHeart />}
         />
       </li>
-      <li className={styles.container__mobile_list__item}>
+      <li className={`${styles.container__mobile_list__item} ${styles.container__mobile_list__item__only_mobile}`}>
         <CircleIconButton
           title={t('navbar.cart') as string}
           size={'auto'}

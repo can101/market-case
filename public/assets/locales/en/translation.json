@@ -1,5 +1,6 @@
 {
   "language": "english",
+  "not_found_data": "not found data",
   "go_to_home": "go to home",
   "start_shopping": "start shopping",
   "empty_favorite_msg": "your favorite list is empty",

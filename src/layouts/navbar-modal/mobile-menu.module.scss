@@ -12,12 +12,20 @@
         flex-direction: column;
         row-gap: 30px;
         &__item {
+            &__only_mobile {
+                @include tablet {
+                    display: none;
+                }
+                @include desktop {
+                    display: none;
+                }
+            }
             &:first-child {
                 @include align-center;
             }
             &__inner {
-               @include align-center;
-               gap: 10px;
+                @include align-center;
+                gap: 10px;
                 &__info_msg {
                     color: var(--dark);
                 }
