@@ -6,7 +6,7 @@ import axios from "axios";
 export const getAllCategoryAsyncThunk = createAsyncThunk(
     'category/get',
     async () => {
-        const {data: {categories}} = await axios.post("/data/db.json");
+        const {data: {categories}} = await axios.get("/data/db.json");
         return categories;
     }
 );
