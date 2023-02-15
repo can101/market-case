@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './basket.module.scss';
-import Base from './utils/layout/base';
+import Base from '../../layouts/basket';
 import EmptyLayout, { type IEmptyProps } from '@layouts/empty';
 import cartJson from '@assets/json/cart.json';
 import { useTranslation } from 'react-i18next';
