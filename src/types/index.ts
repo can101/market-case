@@ -17,6 +17,7 @@ export interface IProductState {
     items: IProduct[];
     loading: boolean;
     error: string;
+    temp: IProduct[];
 }
 
 export interface IProductAction {

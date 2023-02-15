@@ -8,6 +8,7 @@ import { getAllCategoryAsyncThunk } from '@store/category/getAllCategoryAsyncThu
 import type { ICategory } from '@/types';
 import styles from './filter.module.scss';
 import { useTranslation } from 'react-i18next';
+import { actions } from '@store/products';
 
 const Filter = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -15,6 +16,9 @@ const Filter = () => {
     console.log('Home page');
     void dispatch(getAllCategoryAsyncThunk());
   }, []);
+  const handleClickFilter = (category: ICategory): void => {
+    dispatch(actions.filterProductsCategory({ category: category.name }));
+  };
   const _categoryList = useSelector((state: RootState) => state.categories);
   const { t } = useTranslation();
   return (
@@ -32,16 +36,7 @@ const Filter = () => {
           }}
         />
         <div className={styles.filter__right_box}>
-          <Select
-            placeholder={t('filter.filter_by') as string}
-            options={_categoryList.items}
-            onClick={(item: ICategory): void => {
-              console.log('====================================');
-              console.log('item', item);
-              console.log('====================================');
-            }}
-            size={'sm'}
-          />
+          <Select placeholder={t('filter.filter_by') as string} options={_categoryList.items} onClick={handleClickFilter} size={'sm'} />
           <Select
             size={'sm'}
             isGray={true}
