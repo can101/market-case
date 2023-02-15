@@ -1,8 +1,9 @@
 @use "@assets/styles/mixin" as *;
+@use "@assets/styles/variables" as *;
 
 .newsletter {
   height: 250px;
-  background: rgba(186, 236, 210, 0.459);
+  background: var(--oceanBreeze);
   border-radius: 50px;
   @include mobile {
     width: 90%;
@@ -15,7 +16,7 @@
   text-align: center;
   @include align-center;
   &__inner_content {
-    color: #05c26a;
+    color: var(--jadeGreen);
   }
   &__title {
     font-size: 1.7rem;
@@ -25,7 +26,7 @@
   &__description {
     font-size: 0.9rem;
     font-weight: 400;
-    color: #000;
+    color: $black;
     width: 80%;
     margin: 0 auto;
     line-height: 1.5;

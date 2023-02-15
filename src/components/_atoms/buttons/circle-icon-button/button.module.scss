@@ -1,4 +1,5 @@
 @use "@assets/styles/mixin" as *;
+@use "@assets/styles/variables" as *;
 
 .container {
   @include align-center;
@@ -7,9 +8,9 @@
   &__button {
     border-radius: 50%;
     @include align-center;
-    border: 1px solid rgba(131, 127, 127, 0);
-    box-shadow: inset 0 0 9px 1px rgb(186, 236, 210);
-    color: #05c26a;
+    border: 1px solid $transparent;
+    box-shadow: inset 0 0 9px 1px var(--paleJade);
+    color: var(--jadeGreen);
     font-weight: bold;
     position: relative;
 
@@ -51,8 +52,8 @@
     }
 
     &:hover:not(&:disabled) {
-      border-color: #05c26a;
-      box-shadow: inset 0 0 9px 1px rgb(186, 236, 210);
+      border-color: var(--jadeGreen);
+      box-shadow: inset 0 0 9px 1px var(--paleJade);
     }
 
     &__icon {
@@ -63,8 +64,8 @@
       position: absolute;
       top: 0px;
       right: -5px;
-      background: #05c26a;
-      color: #fff;
+      background: var(--jadeGreen);
+      color: $white;
       width: 25px;
       height: 25px;
       @include align-center;
@@ -80,7 +81,7 @@
       font-size: 1.2rem;
       letter-spacing: 1px;
       font-weight: 400;
-      color: #05c26a;
+      color: var(--jadeGreen);
       text-transform: capitalize;
       cursor: pointer;
     }

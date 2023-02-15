@@ -6,8 +6,8 @@
 
 .navbar {
   height: 80px;
-  box-shadow: 0 8px 15px 0 #fff;
-  background-color: #ffffff;
+  box-shadow: 0 8px 15px 0 var(--light);
+  background-color: var(--light);
   margin-bottom: 10px;
   display: flex;
   align-items: center;

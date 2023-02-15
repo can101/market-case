@@ -1,4 +1,5 @@
 @use "@assets/styles/mixin" as *;
+@use "@assets/styles/variables" as *;
 
 .select {
   width: 200px;
@@ -21,12 +22,12 @@
     border-radius: 75px;
     outline: none;
     border: none;
-    background-color: #05c26a;
+    background-color: $jadegreen;
     &__gray {
-      background-color: #f0f0f0;
-      color: #000;
+      background-color: $lightgrey;
+      color: $black;
     }
-    color: #fff;
+    color: $white;
     text-transform: capitalize;
   }
   &__wrapper {
@@ -34,18 +35,18 @@
     width: 100%;
     top: 80%;
     z-index: 5;
-    background: rgb(255, 255, 255);
-    box-shadow: 0 0 10px 1px rgb(186, 236, 210);
+    background: var(--light);
+    box-shadow: 0 0 10px 1px $lightgreen;
     padding: 5px;
     border-radius: 10px;
     margin-top: 5px;
     max-height: 100px;
     overflow-y: auto;
-    @include custom-scrollbar(#05c26a, #fff);
+    @include custom-scrollbar;
   }
   &__option {
-    color: #05c26a;
-    background-color: lighten($color: #05c26a, $amount: 50%);
+    color: $jadegreen;
+    background-color: lighten($color: $jadegreen, $amount: 50%);
     margin-bottom: 5px;
     height: 30px;
     border-radius: 75px;
@@ -56,7 +57,7 @@
       cursor: pointer;
     }
     &__selected {
-      background-color: darken($color: #05c26a, $amount: 50%);
+      background-color: var(--dark);
     }
   }
 }

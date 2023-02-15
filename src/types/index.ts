@@ -35,3 +35,6 @@ export interface ICategoryState {
     error: string;
 }
 
+export interface IThemeState {
+    theme: string;
+}
