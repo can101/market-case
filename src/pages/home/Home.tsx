@@ -10,6 +10,7 @@ import Spinner from '@_atoms/spinner';
 import NewsLetter from '@components/newsletter';
 import { AiOutlineHeart } from 'react-icons/ai';
 import Filter from '@components/filter';
+import Nodata from '@components/no-data';
 
 const Home = (): ReactElement => {
   const dispatch = useDispatch<AppDispatch>();
@@ -19,7 +20,7 @@ const Home = (): ReactElement => {
     void dispatch(getAllProductsAsyncThunk());
   }, []);
 
-  const { items, loading } = useSelector((state: RootState) => state.products);
+  const { items, loading, notfound } = useSelector((state: RootState) => state.products);
 
   return (
     <div className={styles.home}>
@@ -28,19 +29,21 @@ const Home = (): ReactElement => {
         <>
           <Filter />
           <section className={styles.home__products}>
-            {items.map((item: IProduct) => (
-              <ProductCard
-                icon={<AiOutlineHeart />}
-                key={item.id}
-                item={item}
-                onIconClick={function (): void {
-                  alert('clicked');
-                }}
-                onButtonClick={function (): void {
-                  alert('clicked');
-                }}
-              />
-            ))}
+            {notfound && <Nodata size={70} />}
+            {!notfound &&
+              items.map((item: IProduct) => (
+                <ProductCard
+                  icon={<AiOutlineHeart />}
+                  key={item.id}
+                  item={item}
+                  onIconClick={function (): void {
+                    alert('clicked');
+                  }}
+                  onButtonClick={function (): void {
+                    alert('clicked');
+                  }}
+                />
+              ))}
           </section>
         </>
       )}

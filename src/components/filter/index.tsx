@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Input from '@_atoms/form/input';
 import Select from '@_atoms/form/select';
 import type { RootState, AppDispatch } from '@/store';
@@ -9,6 +9,7 @@ import type { ICategory, ISortBy } from '@/types';
 import styles from './filter.module.scss';
 import { useTranslation } from 'react-i18next';
 import { actions, type Params } from '@store/products';
+import { log } from 'console';
 
 const Filter = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -30,6 +31,7 @@ const Filter = () => {
     { id: 3, name: t('filter.sort_by.price_low_to_high') as string, nameSpace: 'price' },
     { id: 4, name: t('filter.sort_by.price_high_to_low') as string, nameSpace: 'price', isReverse: true },
   ];
+  const [value, setValue] = useState('');
   return (
     <div>
       <div className={styles.filter}>
@@ -37,11 +39,14 @@ const Filter = () => {
           icon={<AiOutlineSearch />}
           size={'auto'}
           placeholder={t('filter.search') as string}
-          value={''}
-          onChange={function (e: React.ChangeEvent<HTMLInputElement>): void {
-            console.log('====================================');
-            console.log(e.target.value, 'e.target.value');
-            console.log('====================================');
+          value={value}
+          onChange={(value): void => {
+            const text = value.target.value;
+            setValue(text);
+            dispatch(actions.searchProductName({ text }));
+          }}
+          onClick={(): void => {
+            dispatch(actions.searchProductName({ text: value }));
           }}
         />
         <div className={styles.filter__right_box}>
