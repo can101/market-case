@@ -15,10 +15,15 @@ const productSlice = createSlice({
     initialState,
     reducers: {
         filterProductsCategory: (state: IProductState, action: PayloadAction<{ category: string }>) => {
-            state.items = state.temp.filter(e => e.category === action.payload.category);
+            const { category } = action.payload;
+            if (category === 'All') {
+                state.items = state.temp;
+                return;
+            }
+            state.items = state.temp.filter(e => e.category === category);
         },
         sortBy: (state, action) => {
-            
+
         },
         searchProductName: (state, action) => {
             const regex = new RegExp('s', 'i');
