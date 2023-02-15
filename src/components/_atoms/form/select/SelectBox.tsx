@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import type { FC, ReactElement } from 'react';
 import styles from './selectbox.module.scss';
-import type { ICategory } from '@/types';
+import type { ICategory, ISortBy } from '@/types';
 
+type Item = ICategory | ISortBy;
 interface ISelectProps {
   placeholder: string;
-  options: ICategory[];
-  value?: ICategory;
-  onClick: (item: ICategory) => void;
+  options: ICategory[] | ISortBy[];
+  value?: Item;
+  onClick: (item: Item) => void;
   isGray?: boolean;
   size: 'sm' | 'md' | 'lg' | 'auto';
 }
@@ -45,7 +46,7 @@ const SelectBox: FC<ISelectProps> = ({ options, placeholder, isGray = false, onC
                 aria-disabled={option.id === selectedOption.id}
                 key={option.id}
                 className={`${styles.select__option} ${selectedOption.id === option.id ? styles.select__option__selected : ''}`}
-                onClick={(e: React.MouseEvent<HTMLElement>): void => {
+                onClick={(): void => {
                   setSelectedOption(option);
                   onClick(option);
                 }}

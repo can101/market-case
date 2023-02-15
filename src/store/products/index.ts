@@ -1,7 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 // import type { PayloadAction } from '@reduxjs/toolkit'
-import type { IProductState } from '@/types';
+import type { IProduct, IProductState } from '@/types';
 import { getAllProductsAsyncThunk } from './getAllProductsAsyncThunk';
+import { type } from 'os';
 
 const initialState: IProductState = {
     items: [],
@@ -9,6 +10,8 @@ const initialState: IProductState = {
     error: '',
     temp: []
 };
+
+export type Params = 'name' | 'price' | 'category';
 
 const productSlice = createSlice({
     name: 'products',
@@ -22,8 +25,22 @@ const productSlice = createSlice({
             }
             state.items = state.temp.filter(e => e.category === category);
         },
-        sortBy: (state, action) => {
-
+        sortByPrameters: (state: IProductState, action: PayloadAction<{ params: Params, isReverse: boolean }>) => {
+            const params = action.payload.params || 'name';
+            const response: IProduct[] = state.temp.sort((a: IProduct, b: IProduct) => {
+                if (a[params] > b[params]) {
+                    return 1;
+                }
+                if (a[params] < b[params]) {
+                    return -1;
+                }
+                return 0;
+            });
+            if (action.payload.isReverse) {
+                state.items = response.reverse();
+                return;
+            }
+            state.items = response;
         },
         searchProductName: (state, action) => {
             const regex = new RegExp('s', 'i');

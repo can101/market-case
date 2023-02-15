@@ -5,10 +5,10 @@ import type { RootState, AppDispatch } from '@/store';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllCategoryAsyncThunk } from '@store/category/getAllCategoryAsyncThunk';
-import type { ICategory } from '@/types';
+import type { ICategory, ISortBy } from '@/types';
 import styles from './filter.module.scss';
 import { useTranslation } from 'react-i18next';
-import { actions } from '@store/products';
+import { actions, type Params } from '@store/products';
 
 const Filter = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -19,8 +19,17 @@ const Filter = () => {
   const handleClickFilter = (category: ICategory): void => {
     dispatch(actions.filterProductsCategory({ category: category.name }));
   };
+  const handleClickSort = (sort: ISortBy): void => {
+    dispatch(actions.sortByPrameters({ params: sort.nameSpace as Params, isReverse: sort.isReverse }));
+  };
   const _categoryList = useSelector((state: RootState) => state.categories);
   const { t } = useTranslation();
+  const sortOptions = [
+    { id: 1, name: t('filter.sort_by.sort_by_a_z') as string, nameSpace: 'name' },
+    { id: 2, name: t('filter.sort_by.sort_by_z_a') as string, nameSpace: 'name', isReverse: true },
+    { id: 3, name: t('filter.sort_by.price_low_to_high') as string, nameSpace: 'price' },
+    { id: 4, name: t('filter.sort_by.price_high_to_low') as string, nameSpace: 'price', isReverse: true },
+  ];
   return (
     <div>
       <div className={styles.filter}>
@@ -41,16 +50,9 @@ const Filter = () => {
             size={'sm'}
             isGray={true}
             placeholder={t('filter.sort_by.title') as string}
-            options={[
-              { id: 1, name: t('filter.sort_by.sort_by_a_z') as string },
-              { id: 2, name: t('filter.sort_by.sort_by_z_a') as string },
-              { id: 3, name: t('filter.sort_by.price_low_to_high') as string },
-              { id: 4, name: t('filter.sort_by.price_high_to_low') as string },
-            ]}
-            onClick={(item: ICategory): void => {
-              console.log('====================================');
-              console.log('item', item);
-              console.log('====================================');
+            options={sortOptions}
+            onClick={(el) => {
+              handleClickSort(el as ISortBy);
             }}
           />
         </div>
