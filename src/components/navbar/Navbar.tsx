@@ -20,7 +20,9 @@ const Navbar: FC = (): ReactElement => {
       <ul className={styles.navbar__list}>
         <li className={styles.navbar__brand}>
           <Link to={'/'}>
-            <Logo />
+            <Logo 
+            size='md'
+            />
           </Link>
         </li>
         <li className={styles.navbar__desktop_buttons}>
