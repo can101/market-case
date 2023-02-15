@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from './modal.module.scss';
 import type { FC, ReactNode, ReactFragment, ReactPortal, ReactElement } from 'react';
-import Button from '../_atoms/buttons/circle-icon-button';
+import Button from '@_atoms/buttons/circle-icon-button';
 import { IoCloseSharp } from 'react-icons/io5';
 import ReactDOM from 'react-dom';
 

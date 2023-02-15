@@ -1,10 +1,10 @@
 import React, { type FC, type ReactElement } from 'react';
 import styles from './service.module.scss';
 // image import area start
-import box from '../../assets/images/svg/icons/box.svg';
-import truck from '../../assets/images/svg/icons/truck.svg';
-import lock from '../../assets/images/svg/icons/lock.svg';
-import phone from '../../assets/images/svg/icons/phone.svg';
+import box from '@assets/images/svg/icons/box.svg';
+import truck from '@assets/images/svg/icons/truck.svg';
+import lock from '@assets/images/svg/icons/lock.svg';
+import phone from '@assets/images/svg/icons/phone.svg';
 // image import area end
 
 interface IServiceItem {

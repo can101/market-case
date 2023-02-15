@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './productcard.module.scss';
 import type { FC, ReactElement } from 'react';
-import type { IProduct } from '../../../types';
-import Button from '../../_atoms/buttons/circle-icon-button';
-import FlatButton from '../../_atoms/buttons/flat-button';
+import type { IProduct } from '@/types';
+import Button from '@_atoms/buttons/circle-icon-button';
+import FlatButton from '@_atoms/buttons/flat-button';
 
 export interface IProductCardProps {
   item: IProduct;

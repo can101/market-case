@@ -1,10 +1,10 @@
 import React, { type ReactElement, type FC } from 'react';
 import styles from './navbar.module.scss';
-import Logo from '../../components/_atoms/logo';
+import Logo from '@_atoms/logo';
 import { AiFillHeart } from 'react-icons/ai';
 import { SlBasket } from 'react-icons/sl';
 import { BsFillSunFill, BsFillMoonStarsFill } from 'react-icons/bs';
-import CircleIconButton from '../_atoms/buttons/circle-icon-button';
+import CircleIconButton from '@_atoms/buttons/circle-icon-button';
 import { Link, useNavigate } from 'react-router-dom';
 import MobileMenu from './utils/mobile-menu';
 

@@ -2,13 +2,13 @@ import React, { type FC } from 'react';
 import { AiFillHeart } from 'react-icons/ai';
 import { RiMenu4Line } from 'react-icons/ri';
 import { SlBasket } from 'react-icons/sl';
-import CircleIconButton from '../../../_atoms/buttons/circle-icon-button';
-import Modal from '../../../modal';
+import CircleIconButton from '@_atoms/buttons/circle-icon-button';
+import Modal from '@/components/modal';
 import styles from './mobile-menu.module.scss';
-import Logo from '../../../_atoms/logo';
-import Switch from '../../../_atoms/form/toggle-switch';
-import SelectBox from '../../../_atoms/form/select';
-import { ICategory } from '../../../../types';
+import Logo from '@_atoms/logo';
+import Switch from '@_atoms/form/toggle-switch';
+import SelectBox from '@_atoms/form/select';
+import { ICategory } from '@/types';
 
 interface IMobileMenuProps {
   onClick: (path: string) => void;

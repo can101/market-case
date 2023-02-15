@@ -1,6 +1,13 @@
-.bg_dark {
-  height: 100vh;
-  width: 100%;
-  background-color: rgb(135, 54, 182);
-  color: #fff;
+@use "@assets/styles/mixin.scss" as *;
+
+.home {
+  padding: 0 15px;
+  &__products {
+    gap: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+  }
 }

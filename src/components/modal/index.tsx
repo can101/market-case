@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import type { FC, ReactElement, ReactNode } from 'react';
 import ModalWrapper, { type Children } from './Modal';
-import Button from '../_atoms/buttons/circle-icon-button';
+import Button from '@_atoms/buttons/circle-icon-button';
 
 interface IModalProps {
   children: Children;

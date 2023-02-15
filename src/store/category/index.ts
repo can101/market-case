@@ -1,6 +1,6 @@
 import {createSlice} from '@reduxjs/toolkit';
 // import type { PayloadAction } from '@reduxjs/toolkit'
-import type {ICategoryState} from '../../types';
+import type {ICategoryState} from '@/types';
 import {getAllCategoryAsyncThunk} from './getAllCategoryAsyncThunk';
 
 

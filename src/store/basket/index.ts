@@ -1,5 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit';
-import type {IBasketState} from "../../types";
+import type {IBasketState} from "@/types";
 
 const initialState: IBasketState = {
     items: [],

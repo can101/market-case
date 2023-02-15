@@ -1,7 +1,7 @@
 import React from 'react';
 import type { FC, ReactElement } from 'react';
 import styles from './emptylayout.module.scss';
-import FlatButton from '../../_atoms/buttons/flat-button';
+import FlatButton from '@_atoms/buttons/flat-button';
 import { Player } from '@lottiefiles/react-lottie-player';
 import { useNavigate } from 'react-router-dom';
 

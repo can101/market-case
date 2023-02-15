@@ -1,6 +1,6 @@
 import React, { type FC, type ReactElement } from 'react';
 import styles from './itemcounter.module.scss';
-import CircleIconButton from '../_atoms/buttons/circle-icon-button';
+import CircleIconButton from '@_atoms/buttons/circle-icon-button';
 import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
 
 interface ICounterProps {

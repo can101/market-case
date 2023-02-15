@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
-import Input from '../_atoms/form/input';
-import Select from '../_atoms/form/select';
-import type { RootState, AppDispatch } from '../../store';
+import Input from '@_atoms/form/input';
+import Select from '@_atoms/form/select';
+import type { RootState, AppDispatch } from '@/store';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllCategoryAsyncThunk } from '../../store/category/getAllCategoryAsyncThunk';
-import type { ICategory } from '../../types';
+import { getAllCategoryAsyncThunk } from '@store/category/getAllCategoryAsyncThunk';
+import type { ICategory } from '@/types';
 import styles from './filter.module.scss';
 
 const Filter = () => {

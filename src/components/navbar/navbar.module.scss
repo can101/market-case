@@ -1,4 +1,4 @@
-@use "../../assets/styles/mixin.scss" as *;
+@use "@assets/styles/mixin.scss" as *;
 
 @mixin dblock($value: block) {
   display: $value;
