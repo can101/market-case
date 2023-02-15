@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import type { FC, ReactElement } from 'react';
 import styles from './selectbox.module.scss';
-import type { ICategory } from '../../../../types';
+import type { ICategory } from '@/types';
 
 interface ISelectProps {
   placeholder: string;

@@ -1,8 +1,8 @@
 import React from 'react';
 import type { FC, ReactElement } from 'react';
 import styles from './basketcard.module.scss';
-import ItemCounter from '../../item-counter';
-import IconButton from '../../_atoms/buttons/circle-icon-button';
+import ItemCounter from '@components/item-counter';
+import IconButton from '@_atoms/buttons/circle-icon-button';
 import { RiDeleteBin5Line } from 'react-icons/ri';
 
 const BasketCard: FC = (): ReactElement => {

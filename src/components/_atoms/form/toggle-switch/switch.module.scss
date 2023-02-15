@@ -1,4 +1,4 @@
-@use "../../../../assets/styles/mixin" as *;
+@use "@assets/styles/mixin" as *;
 
 @mixin beforeSlider($width, $height, $top: 5px, $left: 5px) {
   top: $top;

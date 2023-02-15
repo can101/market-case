@@ -1,6 +1,11 @@
-.bg_dark {
-  height: 100vh;
-  width: 100%;
-  background-color: rgb(135, 54, 182);
-  color: #fff;
+@use "@assets/styles/mixin" as *;
+
+.pagenotfound {
+  height: 350px;
+  @include align-center;
+  flex-direction: column;
+
+  &__animation {
+    height: 250px;
+  }
 }

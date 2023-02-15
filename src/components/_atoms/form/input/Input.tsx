@@ -1,7 +1,7 @@
 import React from 'react';
 import type { FC, ReactElement, ReactNode } from 'react';
 import styles from './input.module.scss';
-import Button from '../../buttons/circle-icon-button';
+import Button from '@_atoms/buttons/circle-icon-button';
 
 interface IInputProps {
   type?: string;

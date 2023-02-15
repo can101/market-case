@@ -1,17 +1,16 @@
 import React from 'react';
 import styles from './app.module.scss';
-import { Link, useRoutes } from 'react-router-dom';
-import Root from '../router/root';
+import { useRoutes } from 'react-router-dom';
+import Root from '@routes/root';
+import Navbar from '@components/navbar';
+import Footer from '@components/footer';
 
 function App(): React.ReactElement {
   return (
-    <div className={styles.bg_dark}>
-      <nav>
-        <Link to="/">Anasayfa</Link>
-        <Link to="/basket">Basket</Link>
-        <Link to="/favorites">Favorites</Link>
-      </nav>
+    <div className={styles.container}>
+      <Navbar />
       {useRoutes(Root)}
+      <Footer />
     </div>
   );
 }
