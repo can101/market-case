@@ -3,11 +3,13 @@ import styles from './basket.module.scss';
 import Base from './utils/layout/base';
 import EmptyLayout, { type IEmptyProps } from '@layouts/empty';
 import cartJson from '@assets/json/cart.json';
+import { useTranslation } from 'react-i18next';
 
 function Basket(): JSX.Element {
+  const { t } = useTranslation();
   const emptyProps: IEmptyProps = {
-    title: 'start shopping',
-    infoMessage: 'Your cart is empty',
+    title: t('start_shopping'),
+    infoMessage: t('empty_cart_msg'),
     path: '/',
     srcjson: cartJson,
   };

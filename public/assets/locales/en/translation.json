@@ -1,0 +1,64 @@
+{
+  "language": "english",
+  "go_to_home": "go to home",
+  "start_shopping": "start shopping",
+  "empty_favorite_msg": "your favorite list is empty",
+  "empty_cart_msg": "your cart is empty",
+  "empty_search_msg": "search result not found",
+  "order_samuray": "order samuray",
+  "subtotal": "subtotal",
+  "confirm_order": "confirm order",
+  "theme_info": "theme {{value}}",
+  "navbar": {
+    "title": "menu",
+    "favorites": "favorites",
+    "cart": "cart"
+  },
+  "slect_language": {
+    "language": "select language",
+    "turkish": "turkish",
+    "english": "english"
+  },
+  "filter": {
+    "search": "search",
+    "filter_by": "filter by",
+    "sort_by": {
+      "title": "sort by",
+      "sort_by_a_z": "A-Z",
+      "sort_by_z_a": "Z-A",
+      "price_low_to_high": " lowest price",
+      "price_high_to_low": " highest price"
+    }
+  },
+  "product_card": {
+    "add_to_cart": "Add to Cart"
+  },
+  "service": {
+    "free_shipping": "free shping",
+    "secure_shopping": "secure shopping",
+    "esay_return": "esay return",
+    "comunication": "comunication"
+  },
+  "newsLetter": {
+    "title": "Newsletter",
+    "description": "Subscribe to our newsletter and get 10% off your first purchase",
+    "placeholder": "Enter email",
+    "button": "subscribe"
+  },
+  "footer": {
+    "information": "information",
+    "about_us": "about us",
+    "delivery_information": "delivery information",
+    "privacy_policy": "privacy policy",
+    "term_condition": "term & condition",
+    "customer_sevice": "customer sevice",
+    "contact_us": "contact us",
+    "order_history": "order history",
+    "my_account": "my account",
+    "flow_us": "flow us",
+    "whish_list": "whish list",
+    "newsletter": "newsletter",
+    "rights": "All rights reserved. © 2023",
+    "account_info": "account info"
+  }
+}

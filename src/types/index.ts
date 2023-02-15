@@ -27,6 +27,7 @@ export interface IProductAction {
 export interface ICategory {
     id: number;
     name: string;
+    base?: string;
 }
 
 export interface ICategoryState {

@@ -4,6 +4,7 @@ import type { FC, ReactElement } from 'react';
 import type { IProduct } from '@/types';
 import Button from '@_atoms/buttons/circle-icon-button';
 import FlatButton from '@_atoms/buttons/flat-button';
+import { useTranslation } from 'react-i18next';
 
 export interface IProductCardProps {
   item: IProduct;
@@ -13,6 +14,7 @@ export interface IProductCardProps {
 }
 
 const ProductCard: FC<IProductCardProps> = ({ item, icon, onButtonClick, onIconClick }): ReactElement => {
+  const { t } = useTranslation();
   return (
     <article className={styles.productCard}>
       <div className={styles.productCard__wrapper}>
@@ -28,7 +30,7 @@ const ProductCard: FC<IProductCardProps> = ({ item, icon, onButtonClick, onIconC
           <span className={styles.productCard__price}>{item.price}</span>
           <span className={styles.productCard__category}>{item.category}</span>
         </div>
-        <FlatButton onClick={onButtonClick} title={'Add to cart'} />
+        <FlatButton onClick={onButtonClick} title={t('product_card.add_to_cart') as string} />
       </div>
     </article>
   );

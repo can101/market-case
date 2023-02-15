@@ -1,0 +1,64 @@
+{
+  "language": "Türkçe",
+  "go_to_home": "Anasayfaya Git",
+  "start_shopping": "Alışverişe Başla",
+  "empty_favorite_msg": "Favorileriniz Boş",
+  "empty_cart_msg": "Sepetiniz Boş",
+  "empty_search_msg": "Arama sonuçları bulunamadı.",
+  "order_samuray": "Siparişiniz Özeti",
+  "subtotal": "Ara Toplam",
+  "confirm_order": "Siparişi Onayla",
+  "navbar": {
+    "title": "Menü",
+    "favorites": "Favorilerim",
+    "cart": "Sepetim",
+    "theme_info": "tema {{value}}"
+  },
+  "slect_language": {
+    "language": "Dil Seçimi",
+    "turkish": "Türkçe",
+    "english": "İngilizce"
+  },
+  "filter": {
+    "search": "Arama",
+    "filter_by": "Filtrele",
+    "sort_by": {
+      "title": "Sırala",
+      "sort_by_a_z": "A-Z",
+      "sort_by_z_a": "Z-A",
+      "price_low_to_high": "En düşük fiyattan",
+      "price_high_to_low": "En yüksek fiyattan"
+    }
+  },
+  "product_card": {
+    "add_to_cart": "Sepete Ekle"
+  },
+  "service": {
+    "free_shipping": "Ücretsiz Kargo",
+    "secure_shopping": "Güvenli Alışveriş",
+    "esay_return": "Kolay İade",
+    "comunication": "İletişim"
+  },
+  "newsLetter": {
+    "title": "Bülten",
+    "description": "Bültenimize abone olun ve ilk satın alımınızda %10 indirim kazanın",
+    "placeholder": "E-posta girin",
+    "button": "Abone Ol"
+  },
+  "footer": {
+    "information": "Bilgi",
+    "about_us": "Hakkımızda",
+    "delivery_information": "Teslimat Bilgileri",
+    "privacy_policy": "Gizlilik Politikası",
+    "term_condition": "Şartlar ve Koşullar",
+    "customer_sevice": "Müşteri Hizmetleri",
+    "contact_us": "Bize Ulaşın",
+    "order_history": "Sipariş Geçmişi",
+    "my_account": "Hesabım",
+    "flow_us": "Bizi takip edin",
+    "whish_list": "İstek Listesi",
+    "newsletter": "Bülten",
+    "rights": "Tüm hakları saklıdır. © 2023",
+    "account_info": "Hesap Bilgileri"
+  }
+}

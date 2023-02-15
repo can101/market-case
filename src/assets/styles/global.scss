@@ -24,7 +24,7 @@ html {
 
 html[data-theme="light"] {
   --jadeGreen: #05c26a;
-  --emerald: #35DFA1;
+  --emerald: #35dfa1;
   --paleJade: #baecd2;
   --oceanBreeze: #e2f8ee;
   --light: #ffffff;
@@ -35,10 +35,11 @@ html[data-theme="light"] {
   --slate: #a9adab;
   --ebony: #cccccc;
   --onyx: #837f7f;
+  --glass: rgba(0, 0, 0, 0.09);
 }
 html[data-theme="dark"] {
   --jadeGreen: #05c26a;
-  --emerald: #35DFA1;
+  --emerald: #35dfa1;
   --paleJade: #baecd2;
   --oceanBreeze: #e2f8ee;
   --light: #000000;
@@ -49,8 +50,10 @@ html[data-theme="dark"] {
   --slate: #7e8281;
   --ebony: #999999;
   --onyx: #a29f9f;
+  --glass: rgba(255, 255, 255, 0.09);
 }
 
 body {
   background-color: var(--light);
+  transition: 0.2s linear;
 }

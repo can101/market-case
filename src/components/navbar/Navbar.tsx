@@ -3,11 +3,12 @@ import styles from './navbar.module.scss';
 import Logo from '@_atoms/logo';
 import { AiFillHeart } from 'react-icons/ai';
 import { SlBasket } from 'react-icons/sl';
-import { BsFillSunFill, BsFillMoonStarsFill } from 'react-icons/bs';
+import { IoSettingsOutline } from 'react-icons/io5';
 import CircleIconButton from '@_atoms/buttons/circle-icon-button';
 import { Link, useNavigate } from 'react-router-dom';
 import MobileMenu from './utils/mobile-menu';
 import { useTheme } from '@hooks/useTheme';
+import Setting from './utils/setting';
 
 const Navbar: FC = (): ReactElement => {
   const navigate = useNavigate();
@@ -20,19 +21,18 @@ const Navbar: FC = (): ReactElement => {
       <ul className={styles.navbar__list}>
         <li className={styles.navbar__brand}>
           <Link to={'/'}>
-            <Logo 
-            size='md'
-            />
+            <Logo size="md" />
           </Link>
         </li>
         <li className={styles.navbar__desktop_buttons}>
           <ul className={styles.navbar__list__buttons}>
             <li className={styles.navbar__list__buttons__item}>
-              <CircleIconButton size={'lg'} onClick={setTheme} icon={isDarkMode ? <BsFillSunFill /> : <BsFillMoonStarsFill />} />
+              <Setting onClick={goToPath} />
             </li>
             <li className={styles.navbar__list__buttons__item}>
               <CircleIconButton
-                size={'lg'}
+                quanttiy={0}
+                size={'md'}
                 onClick={() => {
                   goToPath('/favorites');
                 }}
@@ -41,8 +41,8 @@ const Navbar: FC = (): ReactElement => {
             </li>
             <li className={styles.navbar__list__buttons__item}>
               <CircleIconButton
-                quanttiy={2}
-                size={'lg'}
+                quanttiy={0}
+                size={'md'}
                 onClick={() => {
                   goToPath('/cart');
                 }}
