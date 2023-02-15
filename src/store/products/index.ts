@@ -7,8 +7,9 @@ import { type } from 'os';
 const initialState: IProductState = {
     items: [],
     loading: false,
+    notfound: false,
     error: '',
-    temp: []
+    temp: [],
 };
 
 export type Params = 'name' | 'price' | 'category';
@@ -42,9 +43,11 @@ const productSlice = createSlice({
             }
             state.items = response;
         },
-        searchProductName: (state, action) => {
-            const regex = new RegExp('s', 'i');
-            const res = state.items.filter(e => regex.test(e.name));
+        searchProductName: (state: IProductState, action: PayloadAction<{ text: string }>) => {
+            const regex = new RegExp(action.payload.text, 'i');
+            const res = state.temp.filter(e => regex.test(e.name));
+            state.items = res;
+            state.notfound = res.length === 0;
         }
     },
     extraReducers: (builder) => {

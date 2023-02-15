@@ -18,6 +18,7 @@ export interface IProductState {
     loading: boolean;
     error: string;
     temp: IProduct[];
+    notfound: boolean;
 }
 
 export interface IProductAction {
