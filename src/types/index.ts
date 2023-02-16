@@ -50,3 +50,7 @@ export interface ISortBy {
     nameSpace: string;
     isReverse: boolean;
 }
+export interface IFavoriteState {
+    items: IProduct[];
+    length: number;
+}

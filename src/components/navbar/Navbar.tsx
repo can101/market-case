@@ -13,6 +13,7 @@ import { RootState } from '@store/index';
 
 const Navbar: FC = (): ReactElement => {
   const navigate = useNavigate();
+  const favorites = useSelector((state: RootState) => state.favorites);
   const goToPath = (path: string): void => {
     navigate(path);
   };
@@ -37,7 +38,7 @@ const Navbar: FC = (): ReactElement => {
             </li>
             <li className={styles.navbar__list__buttons__item}>
               <CircleIconButton
-                quanttiy={0}
+                quanttiy={favorites.length}
                 size={'md'}
                 onClick={() => {
                   goToPath('/favorites');

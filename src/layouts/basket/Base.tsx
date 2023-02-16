@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@store/index';
 import { IProduct } from '@_types/index';
 import { actions } from '@store/basket';
+import { addFavoriteItem } from '@store/favorites';
 
 const Basket: FC = (): ReactElement => {
   const dispatch = useDispatch();
@@ -26,6 +27,9 @@ const Basket: FC = (): ReactElement => {
             }}
             deleteItem={function (): void {
               dispatch(actions.deleteBasket({ product: item }));
+            }}
+            addFavorite={function (): void {
+              dispatch(addFavoriteItem({ product: item }));
             }}
           />
         ))}

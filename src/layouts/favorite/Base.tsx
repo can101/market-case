@@ -2,31 +2,41 @@ import React from 'react';
 import styles from './base.module.scss';
 import ProductCard from '@components/cards/product';
 import { IoMdClose } from 'react-icons/io';
+import { AppDispatch, RootState } from '@store/index';
+import { useDispatch, useSelector } from 'react-redux';
+import { IProduct } from '@_types/index';
+import { actions } from '@store/basket';
+import { deleteFavoriteItem } from '@store/favorites';
 
-const item = {
-  id: 1,
-  name: 'Apple',
-  description: 'A juicy and tasty red apple.',
-  price: 0.99,
-  category: 'Fruit',
-  image_url: 'https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80',
-};
+const Basket = () => {
+  const dispatch = useDispatch<AppDispatch>();
+  const { items, length } = useSelector((state: RootState) => state.favorites);
+  function addToCart(item: IProduct) {
+    dispatch(actions.addBasket({ product: item }));
+  }
+  function deleteFavorite(item: IProduct) {
+    dispatch(deleteFavoriteItem({ product: item }));
+  }
 
-function Basket(): JSX.Element {
   return (
-    <div className={styles.bg_dark}>
-      <ProductCard
-        item={item}
-        icon={<IoMdClose />}
-        onButtonClick={(): void => {
-          console.log('clicked');
-        }}
-        onIconClick={(): void => {
-          console.log('clicked');
-        }}
-      />
+    <div>
+      <section className={styles.home__products}>
+        {items.map((item: IProduct) => (
+          <ProductCard
+            icon={<IoMdClose />}
+            key={item.id}
+            item={item}
+            onIconClick={() => {
+              deleteFavorite(item);
+            }}
+            onButtonClick={() => {
+              addToCart(item);
+            }}
+          />
+        ))}
+      </section>
     </div>
   );
-}
+};
 
 export default Basket;
