@@ -1,0 +1,114 @@
+@use "@assets/styles/mixin" as *;
+@use "@assets/styles/variables" as *;
+
+.container {
+    width: 100%;
+    &__header {
+        margin: 30px 0;
+        @include align-center;
+        flex-wrap: wrap;
+        flex-direction: row;
+        gap: 10px;
+        border-radius: 20px;
+        &__adress__card {
+            background-color: #e2f8ee;
+            border: 2px solid black;
+            border-radius: 20px;
+            & > div {
+                display: flex;
+                gap: 15px;
+            }
+            padding: 15px;
+            max-width: 300px;
+            &__item {
+                padding: 10px;
+                letter-spacing: 0.5px;
+                &__name {
+                    color: $jadegreen;
+                    font-weight: 600;
+                }
+                &__adress {
+                    color: $black;
+                    font-weight: 400;
+                    line-height: 1.5;
+                }
+                &__phone,
+                &__door {
+                    text-decoration: underline;
+                    color: #7c7c7c;
+                    @include align-center; 
+                }
+            }
+        }
+    }
+    &__content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "rg lf";
+        @include mobile {
+            flex-direction: row-reverse;
+            grid-template-columns: 1fr;
+            grid-template-areas: "lf" "rg";
+        }
+        &__left {
+            grid-area: lf;
+            &__top,
+            &__bottom {
+            }
+        }
+        &__right {
+            grid-area: rg;
+            @include align-center;
+        }
+    }
+    &__form {
+        &__title {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: $jadegreen;
+            text-transform: capitalize;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+        padding: 10px;
+        &__control {
+            @include mobile {
+                flex-direction: column;
+                gap: 10px;
+            }
+            @include align-center;
+            gap: 10px;
+            margin: 15px auto 0;
+            display: flex;
+            width: 100%;
+            &__buttons {
+                @include align-center;
+                gap: 10px;
+                @include tablet {
+                    flex-direction: row;
+                }
+                @include mobile {
+                    flex-direction: row;
+                }
+                @include extra-small {
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+    &__animation {
+        padding: 10px;
+        &__player {
+            @include mobile {
+                height: 250px;
+            }
+            @include tablet {
+                height: 300px;
+            }
+            @include desktop {
+                height: 350px;
+            }
+        }
+    }
+}

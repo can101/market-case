@@ -67,5 +67,17 @@
     "ask": "Are you sure you want to delete this item?",
     "delte_to_cart": "delete to cart",
     "add_to_fovorite": "Add to favorite"
+  },
+  "delivery": {
+    "title": "delivery",
+    "city": "City*",
+    "district": "District*",
+    "address": "Address*",
+    "door_number": "Door Number",
+    "first_name": "First Name*",
+    "last_name": "Last Name*",
+    "phone": "Phone Number*",
+    "save": "Save",
+    "reset": "Reset"
   }
 }

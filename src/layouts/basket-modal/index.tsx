@@ -33,6 +33,7 @@ const NavbarModal: FC<IBasketModalProps> = ({ onClickAdd, onClickDelete }) => {
             }}
           />
           <FlatButton
+            bgColor="primary"
             size="lg"
             type="button"
             title={t('cart.add_to_fovorite') as string}

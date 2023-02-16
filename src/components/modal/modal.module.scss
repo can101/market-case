@@ -1,7 +1,7 @@
 @use "@assets/styles/mixin" as *;
 @use "@assets/styles/variables" as *;
 
-$duration: 0.5s;
+$duration: 0.35s;
 
 .modal {
     z-index: 10000;
@@ -39,10 +39,10 @@ $duration: 0.5s;
         padding: 15px 25px 40px;
         transform: translateY(-100%);
         &__open {
-            animation: scaleFadeInEnter 0.6s linear both;
+            animation: scaleFadeInEnter $duration linear both;
         }
         &__close {
-            animation: scaleFadeInLeave 0.6s linear both;
+            animation: scaleFadeInLeave $duration linear both;
         }
 
         &__header {

@@ -44,7 +44,7 @@ const Modal: FC<IModalProps> = ({ onClose, children, title }): ReactElement => {
                 setIsAnim(false);
                 setTimeout(() => {
                   onClose();
-                }, 500);
+                }, 350);
               }}
               icon={<IoCloseSharp />}
             />
