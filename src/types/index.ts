@@ -54,3 +54,19 @@ export interface IFavoriteState {
     items: IProduct[];
     length: number;
 }
+
+export interface IDeliveryInfo {
+    phone: string;
+    address: string;
+    district: string;
+    city: string;
+    door_number?: string;
+    first_name: string;
+    last_name: string;
+    createdOn?: Date;
+}
+
+export interface IDeliveryInfoState {
+    items: IDeliveryInfo[];
+    length: number;
+}

@@ -8,6 +8,22 @@
   @include align-center;
   border: none;
   color: var(--jadeGreen);
+  &__primary {
+    background-color: $jadegreen;
+    color: $white;
+    &:hover {
+      position: relative;
+      animation: pulsegreen 2s infinite;
+    }
+  }
+  &__secondary {
+    background-color: $lightgrey;
+    color: $jadegreen;
+    &:hover {
+      position: relative;
+      animation: pulsegrey 2s infinite;
+    }
+  }
   margin-top: 15px;
   text-transform: capitalize;
   &__sm {
@@ -22,20 +38,29 @@
   &__auto {
     width: auto;
   }
-  &:hover {
-    position: relative;
-    animation: pulse 2s infinite;
-  }
-
   &__icon {
     @include align-center;
   }
 }
 
-@keyframes pulse {
+@keyframes pulsegreen {
   0% {
     transform: scale(0.95);
     box-shadow: 0 0 0 0 var(--jadeGreen);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px $icelight;
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 $icelight;
+  }
+}
+@keyframes pulsegrey {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 #d3d3d3;
   }
   70% {
     transform: scale(1);

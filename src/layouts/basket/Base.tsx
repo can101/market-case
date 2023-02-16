@@ -8,8 +8,10 @@ import { RootState } from '@store/index';
 import { IProduct } from '@_types/index';
 import { actions } from '@store/basket';
 import { addFavoriteItem } from '@store/favorites';
+import { useNavigate } from 'react-router-dom';
 
 const Basket: FC = (): ReactElement => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const { t } = useTranslation();
   const cart = useSelector((state: RootState) => state.basket);
@@ -49,8 +51,8 @@ const Basket: FC = (): ReactElement => {
             size="lg"
             type="button"
             title={t('confirm_order') as string}
-            onClick={function (): void {
-              throw new Error('Function not implemented.');
+            onClick={() => {
+              navigate('/delivery-info');
             }}
           />
         </div>

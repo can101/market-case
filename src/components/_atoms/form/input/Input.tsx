@@ -11,13 +11,14 @@ interface IInputProps {
   icon?: ReactNode;
   size?: 'sm' | 'md' | 'lg' | 'auto';
   onClick?: () => void;
+  name?: string;
 }
 
-const Input: FC<IInputProps> = ({ type = 'text', placeholder, icon, size = 'md', onChange, onClick = () => {} }): ReactElement => {
+const Input: FC<IInputProps> = ({ type = 'text', placeholder, icon, size = 'md', onChange, onClick = () => {}, name }): ReactElement => {
   const classNames = styles[`input_box__${size}`];
   return (
     <div className={`${styles.input_box} ${classNames}`}>
-      <input type={type} onChange={onChange} className={styles.input_box__input} placeholder={placeholder} />
+      <input type={type} onChange={onChange} name={name} className={styles.input_box__input} placeholder={placeholder} />
       <div className={styles.input_box__button}></div>
       {icon && (
         <div className={styles.input_box__icon}>
