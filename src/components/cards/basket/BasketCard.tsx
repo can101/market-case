@@ -2,19 +2,19 @@ import React from 'react';
 import type { FC, ReactElement } from 'react';
 import styles from './basketcard.module.scss';
 import ItemCounter from '@components/item-counter';
-import IconButton from '@_atoms/buttons/circle-icon-button';
-import { RiDeleteBin5Line } from 'react-icons/ri';
 import { IProduct } from '@_types/index';
 import BasketModal from '@layouts/basket-modal';
+
 
 interface IBasketCardProps {
   item: IProduct;
   decrement: () => void;
   increment: () => void;
   deleteItem: () => void;
+  addFavorite: () => void;
 }
 
-const BasketCard: FC<IBasketCardProps> = ({ item, decrement, increment, deleteItem }): ReactElement => {
+const BasketCard: FC<IBasketCardProps> = ({ item, decrement, increment, deleteItem, addFavorite }): ReactElement => {
   return (
     <article className={styles.basketcard}>
       <div className={styles.basketcard__container}>
@@ -30,12 +30,7 @@ const BasketCard: FC<IBasketCardProps> = ({ item, decrement, increment, deleteIt
         </div>
         <div className={styles.basketcard__container__price}>$ {(item.price * (item.count as number)).toFixed(2) as string}</div>
         <div className={styles.basketcard__container__remove}>
-          <BasketModal
-            onClickDelete={deleteItem}
-            onClickAdd={() => {
-              console.log('add to favorite');
-            }}
-          />
+          <BasketModal onClickDelete={deleteItem} onClickAdd={addFavorite} />
         </div>
       </div>
     </article>

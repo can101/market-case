@@ -12,6 +12,7 @@ import { AiOutlineHeart } from 'react-icons/ai';
 import Filter from '@components/filter';
 import Nodata from '@components/no-data';
 import { actions } from '@store/basket';
+import { addFavoriteItem } from '@store/favorites';
 
 const Home = (): ReactElement => {
   const dispatch = useDispatch<AppDispatch>();
@@ -25,6 +26,9 @@ const Home = (): ReactElement => {
 
   const addToCart = (item: IProduct): void => {
     dispatch(actions.addBasket({ product: item }));
+  };
+  const addFovorite = (item: IProduct): void => {
+    dispatch(addFavoriteItem({ product: item }));
   };
 
   return (
@@ -41,10 +45,10 @@ const Home = (): ReactElement => {
                   icon={<AiOutlineHeart />}
                   key={item.id}
                   item={item}
-                  onIconClick={function (): void {
-                    alert('clicked');
+                  onIconClick={() => {
+                    addFovorite(item);
                   }}
-                  onButtonClick={()=>{
+                  onButtonClick={() => {
                     addToCart(item);
                   }}
                 />
