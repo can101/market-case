@@ -1,16 +1,18 @@
 export interface IProduct {
+    [x: string]: any;
     id: number;
     name: string;
     price: number;
     image_url: string;
     description: string;
     category: string;
-    quantity?: number;
+    count?: number;
 }
 
 export interface IBasketState {
     items: IProduct[];
     total: number;
+    length: number;
 }
 
 export interface IProductState {

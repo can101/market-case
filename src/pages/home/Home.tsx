@@ -11,6 +11,7 @@ import NewsLetter from '@components/newsletter';
 import { AiOutlineHeart } from 'react-icons/ai';
 import Filter from '@components/filter';
 import Nodata from '@components/no-data';
+import { actions } from '@store/basket';
 
 const Home = (): ReactElement => {
   const dispatch = useDispatch<AppDispatch>();
@@ -21,6 +22,10 @@ const Home = (): ReactElement => {
   }, []);
 
   const { items, loading, notfound } = useSelector((state: RootState) => state.products);
+
+  const addToCart = (item: IProduct): void => {
+    dispatch(actions.addBasket({ product: item }));
+  };
 
   return (
     <div className={styles.home}>
@@ -39,8 +44,8 @@ const Home = (): ReactElement => {
                   onIconClick={function (): void {
                     alert('clicked');
                   }}
-                  onButtonClick={function (): void {
-                    alert('clicked');
+                  onButtonClick={()=>{
+                    addToCart(item);
                   }}
                 />
               ))}

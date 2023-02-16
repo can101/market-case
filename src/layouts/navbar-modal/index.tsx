@@ -11,6 +11,8 @@ import { IoSettingsOutline } from 'react-icons/io5';
 import CircleIconButton from '@components/_atoms/buttons/circle-icon-button';
 import { AiFillHeart } from 'react-icons/ai';
 import { SlBasket } from 'react-icons/sl';
+import { useSelector } from 'react-redux';
+import { RootState } from '@store/index';
 
 interface INavbarModalProps {
   onClick: (path: string) => void;
@@ -30,6 +32,7 @@ const MobileMenu: FC<IMobileMenuProps> = ({
   },
 }) => {
   const { t } = useTranslation();
+  const cart = useSelector((state: RootState) => state.basket);
   return (
     <>
       <li className={`${styles.container__mobile_list__item} ${styles.container__mobile_list__item__only_mobile}`}>
@@ -47,6 +50,7 @@ const MobileMenu: FC<IMobileMenuProps> = ({
         <CircleIconButton
           title={t('navbar.cart') as string}
           size={'auto'}
+          quanttiy={cart.length}
           onClick={() => {
             backgroundClick();
             onClick('/cart');

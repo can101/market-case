@@ -23,6 +23,10 @@
       width: 90%;
       margin: 0 auto;
     }
+    @include tablet {
+      width: 95%;
+      margin: 0 auto;
+    }
     @include mobile {
       width: 95%;
       margin: 0 auto;

@@ -11,7 +11,7 @@ const transform = encryptTransform({
     }
 });
 
-const whitelist = ['products', 'categories', 'theme'];
+const whitelist = [ 'theme','basket','favorites'];
 const blacklist = ['products', 'categories'];
 
 const rootPersistConfig = {
