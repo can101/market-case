@@ -3,15 +3,32 @@ import styles from './base.module.scss';
 import BasketCard from '@components/cards/basket';
 import FlatButton from '@_atoms/buttons/flat-button';
 import { useTranslation } from 'react-i18next';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '@store/index';
+import { IProduct } from '@_types/index';
+import { actions } from '@store/basket';
 
 const Basket: FC = (): ReactElement => {
+  const dispatch = useDispatch();
   const { t } = useTranslation();
+  const cart = useSelector((state: RootState) => state.basket);
   return (
     <div className={styles.basket}>
       <div className={styles.basket__box}>
-        <BasketCard />
-        <BasketCard />
-        <BasketCard />
+        {cart.items.map((item: IProduct) => (
+          <BasketCard
+            item={item}
+            decrement={function (): void {
+              dispatch(actions.updateBasketItemCount({ product: item, num: -1 }));
+            }}
+            increment={function (): void {
+              dispatch(actions.updateBasketItemCount({ product: item, num: 1 }));
+            }}
+            deleteItem={function (): void {
+              dispatch(actions.deleteBasket({ product: item }));
+            }}
+          />
+        ))}
       </div>
       <div className={styles.basket__box}>
         <div className={styles.basket__box__wrapper}>
@@ -20,7 +37,7 @@ const Basket: FC = (): ReactElement => {
             <div className={styles.basket__box__content}>
               <div className={styles.basket__box__content__price}>
                 <div className={styles.basket__box__content__price__title}>{t('subtotal')}</div>
-                <div className={styles.basket__box__content__price__value}>0.00</div>
+                <div className={styles.basket__box__content__price__value}>{cart.total}</div>
               </div>
             </div>
           </div>

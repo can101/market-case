@@ -61,5 +61,11 @@
     "newsletter": "newsletter",
     "rights": "All rights reserved. © 2023",
     "account_info": "account info"
+  },
+  "cart": {
+    "title": "cart",
+    "ask": "Are you sure you want to delete this item?",
+    "delte_to_cart": "delete to cart",
+    "add_to_fovorite": "Add to favorite"
   }
 }

@@ -8,12 +8,15 @@ import { RiMenu4Line } from 'react-icons/ri';
 import CircleIconButton from '@_atoms/buttons/circle-icon-button';
 import { Link, useNavigate } from 'react-router-dom';
 import NavbarModal from '../../layouts/navbar-modal';
+import { useSelector } from 'react-redux';
+import { RootState } from '@store/index';
 
 const Navbar: FC = (): ReactElement => {
   const navigate = useNavigate();
   const goToPath = (path: string): void => {
     navigate(path);
   };
+  const cart = useSelector((state: RootState) => state.basket);
   return (
     <nav className={styles.navbar}>
       <ul className={styles.navbar__list}>
@@ -44,7 +47,7 @@ const Navbar: FC = (): ReactElement => {
             </li>
             <li className={styles.navbar__list__buttons__item}>
               <CircleIconButton
-                quanttiy={0}
+                quanttiy={cart.length}
                 size={'md'}
                 onClick={() => {
                   goToPath('/cart');

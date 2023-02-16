@@ -1,0 +1,27 @@
+@use "@assets/styles/mixin.scss" as *;
+@use "@assets/styles/variables.scss" as *;
+
+.container {
+    @include align-center;
+    flex-direction: column;
+    row-gap: 25;
+    &__title {
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: $jadegreen;
+        margin-bottom: 10px;
+    }
+    &__buttons {
+        @include align-center;
+        gap: 10px;
+        @include mobile {
+            flex-direction: column;
+        }
+    }
+    & {
+        @include mobile {
+            height: 100vh;
+            width: 100vw;
+        }
+    }
+}

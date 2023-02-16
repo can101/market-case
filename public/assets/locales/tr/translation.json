@@ -61,5 +61,11 @@
     "newsletter": "Bülten",
     "rights": "Tüm hakları saklıdır. © 2023",
     "account_info": "Hesap Bilgileri"
+  },
+  "cart": {
+    "title": "Sepetim",
+    "qestion": "Silmek istediğinize emin misiniz?",
+    "delte_to_cart": "Sepetten Sil",
+    "add_to_fovorite": "Favorilere Ekle"
   }
 }
