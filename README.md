@@ -1,10 +1,10 @@
-# Coino market case study
+#Market case study
 
 This is a case study for the mgreen market.
 
 ## Installation
 
-To install market-coino-case, follow these steps:
+To install market-case, follow these steps:
 Clone the repository:
 
 ```
@@ -14,7 +14,7 @@ git clone `repository_url`
 Navigate to the project directory:
 
 ```
-cd market_case_coino
+cd market_case
 ```
 
 Install dependencies:
