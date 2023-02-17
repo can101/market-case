@@ -71,7 +71,7 @@ const DeliveryInfo = () => {
                 <Input name="phone" size="auto" placeholder={t('delivery.phone')} value={values.phone} onChange={handleChange} />
               </div>
               <div className={`${styles.container__form__control} ${styles.container__form__control__buttons}`}>
-                <FaltButton title={t('delivery.save') as string} size="md" onClick={handleSubmit} />
+                <FaltButton type={'submit'} title={t('delivery.save') as string} size="md" onClick={handleSubmit} />
                 <FaltButton
                   type="reset"
                   bgColor="primary"
