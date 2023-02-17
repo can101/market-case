@@ -30,7 +30,7 @@ npm run dev
 ```
 
 live demo link here:
-> [live link](https://market-case-coino.netlify.app/)
+> [live link](https://market-green-case.netlify.app/)
 
 ## website screenshots
 
