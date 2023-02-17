@@ -1,6 +1,6 @@
 # Coino market case study
 
-This is a case study for the [Coino](https://coino.io) market.
+This is a case study for the mgreen market.
 
 ## Installation
 
