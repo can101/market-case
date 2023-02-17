@@ -19,7 +19,7 @@ const NavbarModal: FC<IBasketModalProps> = ({ onClickAdd, onClickDelete }) => {
   return (
     <Modal icon={<RiDeleteBin5Line />} title={t('cart.title') as string}>
       <div className={styles.container}>
-        <div className={styles.container__title}>{t('cart.ask') as string}</div>
+        <div className={styles.container__title}>{t('cart.question') as string}</div>
         <div className={styles.container__buttons}>
           <FlatButton
             size="lg"
