@@ -15,7 +15,7 @@ interface ISelectProps {
 
 const SelectBox: FC<ISelectProps> = ({ options, placeholder, isGray = false, onClick, size = 'lg', value = { id: 0, name: '' } }): ReactElement => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState<ICategory>(value);
+  const [selectedOption, setSelectedOption] = useState<Item>(value);
   const className = styles[`select__${size}`];
   const toggleOpen = (bool?: boolean): void => {
     setIsOpen(bool ?? !isOpen);

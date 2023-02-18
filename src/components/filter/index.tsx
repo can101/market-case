@@ -9,7 +9,6 @@ import type { ICategory, ISortBy } from '@/types';
 import styles from './filter.module.scss';
 import { useTranslation } from 'react-i18next';
 import { actions, type Params } from '@store/products';
-import { log } from 'console';
 
 const Filter = () => {
   const dispatch = useDispatch<AppDispatch>();
