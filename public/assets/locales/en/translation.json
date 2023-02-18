@@ -4,12 +4,10 @@
   "go_to_home": "go to home",
   "start_shopping": "start shopping",
   "empty_favorite_msg": "your favorite list is empty",
-  "empty_cart_msg": "your cart is empty",
   "empty_search_msg": "search result not found",
-  "order_samuray": "order samuray",
-  "subtotal": "subtotal",
-  "confirm_order": "confirm order",
   "theme_info": "theme {{value}}",
+  "light": "light",
+  "dark": "dark",
   "navbar": {
     "title": "menu",
     "favorites": "favorites",
@@ -66,7 +64,12 @@
     "title": "cart",
     "question": "Are you sure you want to delete this item?",
     "delte_to_cart": "delete to cart",
-    "add_to_fovorite": "Add to favorite"
+    "add_to_fovorite": "Add to favorite",
+    "my_cart": "My Cart ({{count}} Product)",
+    "empty_cart_msg": "your cart is empty",
+    "confirm_order": "confirm order",
+    "order_samuray": "order samuray",
+    "subtotal": "subtotal"
   },
   "delivery": {
     "title": "delivery",

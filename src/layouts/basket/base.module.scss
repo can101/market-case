@@ -1,6 +1,28 @@
 @use "@assets/styles/mixin.scss" as *;
 
 .basket {
+  &__container{
+    @include align-center;
+    min-height: 50vh;
+    &__inner{
+    }
+  }
+  &__header__info {
+    height: 60px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    &__text {
+      background-color: #e2f8ee;
+      padding: 15px 20px;
+      font-weight: 800;
+      font-size: 1rem;
+      border-radius: 75px;
+      letter-spacing: 1px;
+      text-transform: capitalize;
+    }
+  }
+
   &__card_box {
     border: 1px solid var(--jadeGreen);
     border-radius: 25px;
@@ -8,40 +30,51 @@
     margin-bottom: 20px;
     padding: 20px;
   }
+
   display: grid;
+
   @include tablet {
     grid-template-columns: 1fr;
   }
+
   @include mobile {
     grid-template-columns: 1fr;
   }
+
   @include desktop {
     grid-template-columns: 2fr 1fr;
   }
+
   &__box {
     &__wrapper {
       width: 90%;
       margin: 0 auto;
     }
+
     @include tablet {
       width: 95%;
       margin: 0 auto;
     }
+
     @include mobile {
       width: 95%;
       margin: 0 auto;
     }
+
     padding: 10px;
     overflow-y: auto;
-    max-height: 500px;
+    max-height: 530px;
     @include custom-scrollbar;
+
     &__title {
       font-size: 1.3rem;
       font-weight: 500;
       letter-spacing: 1px;
       margin-bottom: 10px;
       color: var(--dark);
+      text-transform: capitalize;
     }
+
     &__content {
       &__price {
         text-align: center;
@@ -52,14 +85,17 @@
         border-radius: 10px;
         font-size: 1rem;
         font-weight: 500;
+
         &__title {
+          text-transform: capitalize;
           margin-right: 10px;
         }
-        &__value {
-        }
+
+        &__value {}
       }
     }
   }
+
   &__inner__list {
     overflow-y: auto;
     height: inherit;

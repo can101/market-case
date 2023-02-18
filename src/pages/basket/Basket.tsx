@@ -12,7 +12,7 @@ function Basket(): JSX.Element {
   const { t } = useTranslation();
   const emptyProps: IEmptyProps = {
     title: t('start_shopping'),
-    infoMessage: t('empty_cart_msg'),
+    infoMessage: t('cart.empty_cart_msg'),
     path: '/',
     srcjson: cartJson,
   };

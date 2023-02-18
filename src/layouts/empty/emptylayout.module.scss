@@ -2,16 +2,20 @@
 
 .empty_container {
   @include align-center;
+  height: 400px;
+
   &__inner {
     width: 250px;
     @include align-center;
     flex-direction: column;
   }
+
   &__animaton_box {
     &__element {
       height: 200px;
     }
   }
+
   &__title {
     font-size: 1rem;
     line-height: 1.5;

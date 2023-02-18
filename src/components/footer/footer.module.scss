@@ -9,25 +9,32 @@
   border-top-left-radius: 75px;
   border-top-right-radius: 75px;
   margin-top: 2.5rem;
-  min-height: 380px;
+  min-height: 400px;
+
   &__top {
     padding: 10px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+
     @include tablet {
       grid-template-columns: repeat(1, 1fr);
     }
+
     @include mobile {
       grid-template-columns: repeat(1, 1fr);
     }
+
     &__colmn {
       margin: 0 15px;
+
       @include tablet {
         text-align: center;
       }
+
       @include mobile {
         text-align: center;
       }
+
       &__title {
         font-size: 1.2rem;
         font-weight: 700;
@@ -35,10 +42,13 @@
         color: var(--jadeGreen);
         text-transform: capitalize;
       }
+
       &__link {
         color: $black;
         font-size: 0.9rem;
         margin-bottom: 10px;
+        text-transform: capitalize;
+
         &:hover {
           color: var(--jadeGreen);
           cursor: pointer;
@@ -46,23 +56,27 @@
           text-decoration: underline;
         }
       }
-      &__wrapper {
-      }
+
+      &__wrapper {}
     }
   }
+
   &__copyright {
     padding: 10px;
     display: flex;
+
     &__text {
       color: $black;
       font-size: 0.9rem;
       margin-bottom: 10px;
     }
   }
+
   &__social_list {
     @include align-center;
     flex-direction: column;
     row-gap: 10px;
+
     &__title {
       font-size: 1.2rem;
       font-weight: 700;
@@ -70,14 +84,17 @@
       color: var(--jadeGreen);
       text-transform: capitalize;
     }
+
     &__wrapper {
       @include align-center;
       gap: 10px;
     }
+
     &__icon {
       @include align-center;
       opacity: 0.5;
       color: $black;
+
       &:hover {
         opacity: 0.9;
         cursor: pointer;
@@ -85,16 +102,20 @@
       }
     }
   }
+
   &__payment_methods {
     padding: 2px;
     display: flex;
+
     &__wrapper {
       @include align-center;
       gap: 5px;
     }
+
     &__list_item {
       @include align-center;
     }
+
     &__icon {
       @include align-center;
       color: $black;
