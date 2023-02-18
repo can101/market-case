@@ -81,6 +81,7 @@
             font-weight: 600;
             letter-spacing: 1px;
             @include align-center;
+            @include addcurrenysymbol;
             @include desktop {
                 flex: 1;
             }

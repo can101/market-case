@@ -1,17 +1,19 @@
 @use "@assets/styles/mixin.scss" as *;
 
 .basket {
-  &__container{
+  &__container {
     @include align-center;
     min-height: 50vh;
-    &__inner{
-    }
+
+    &__inner {}
   }
+
   &__header__info {
     height: 60px;
     padding-left: 20px;
     display: flex;
     align-items: center;
+
     &__text {
       background-color: #e2f8ee;
       padding: 15px 20px;
@@ -91,7 +93,9 @@
           margin-right: 10px;
         }
 
-        &__value {}
+        &__value {
+          @include addcurrenysymbol;
+        }
       }
     }
   }

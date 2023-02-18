@@ -28,7 +28,7 @@ const BasketCard: FC<IBasketCardProps> = ({ item, decrement, increment, deleteIt
         <div className={styles.basketcard__container__quantitiy_counter}>
           <ItemCounter count={item.count as number} onIncrement={increment} onDecrement={decrement} />
         </div>
-        <div className={styles.basketcard__container__price}>$ {(item.price * (item.count as number)).toFixed(2) as string}</div>
+        <div className={styles.basketcard__container__price}>{(item.price * (item.count as number)).toFixed(2) as string}</div>
         <div className={styles.basketcard__container__remove}>
           <BasketModal onClickDelete={deleteItem} onClickAdd={addFavorite} />
         </div>
