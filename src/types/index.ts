@@ -11,7 +11,6 @@ export interface IProduct {
 
 export interface IBasketState {
     items: IProduct[];
-    total: number;
     length: number;
 }
 

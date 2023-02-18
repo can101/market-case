@@ -1,4 +1,4 @@
-import React, { type FC, type ReactElement } from 'react';
+import React, { useEffect, type FC, type ReactElement } from 'react';
 import styles from './base.module.scss';
 import BasketCard from '@components/cards/basket';
 import FlatButton from '@_atoms/buttons/flat-button';
@@ -15,11 +15,13 @@ const Basket: FC = (): ReactElement => {
   const dispatch = useDispatch();
   const { t } = useTranslation();
   const cart = useSelector((state: RootState) => state.basket);
+  const total: number = cart.items.reduce((acc: number, b: IProduct) => acc + (b.price * (b.count as number)), 0).toFixed(2) as unknown as number;
   return (
     <div className={styles.basket}>
       <div className={styles.basket__box}>
-        {cart.items.map((item: IProduct) => (
+        {cart.items.map((item: IProduct, index: number) => (
           <BasketCard
+            key={index}
             item={item}
             decrement={function (): void {
               dispatch(actions.updateBasketItemCount({ product: item, num: -1 }));
@@ -43,7 +45,7 @@ const Basket: FC = (): ReactElement => {
             <div className={styles.basket__box__content}>
               <div className={styles.basket__box__content__price}>
                 <div className={styles.basket__box__content__price__title}>{t('subtotal')}</div>
-                <div className={styles.basket__box__content__price__value}>{cart.total}</div>
+                <div className={styles.basket__box__content__price__value}>{total}</div>
               </div>
             </div>
           </div>
