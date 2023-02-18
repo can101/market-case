@@ -28,7 +28,7 @@ const productSlice = createSlice({
         },
         sortByPrameters: (state: IProductState, action: PayloadAction<{ params: Params, isReverse: boolean }>) => {
             const params = action.payload.params || 'name';
-            const response: IProduct[] = state.temp.sort((a: IProduct, b: IProduct) => {
+            const response: IProduct[] = state.items.sort((a: IProduct, b: IProduct) => {
                 if (a[params] > b[params]) {
                     return 1;
                 }
