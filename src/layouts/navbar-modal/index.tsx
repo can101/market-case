@@ -26,9 +26,7 @@ interface IMobileMenuProps {
 
 const MobileMenu: FC<IMobileMenuProps> = ({
   onClick,
-  backgroundClick = () => {
-    console.log('hello');
-  },
+  backgroundClick = () => { },
 }) => {
   const { t } = useTranslation();
   const cart = useSelector((state: RootState) => state.basket);
@@ -67,8 +65,15 @@ const NavbarModal: FC<INavbarModalProps> = ({ onClick, isShow = false, icon }) =
     const element = document.querySelector('#modal_header button') as HTMLDivElement;
     element.click();
   };
+  const language_list = [
+    { id: 1, name: t('slect_language.turkish') as string, base: 'tr' },
+    { id: 2, name: t('slect_language.english') as string, base: 'en' },
+  ]
   const [isDarkMode, setTheme] = useTheme();
-  const theme = !isDarkMode ? t('light') : t('dark')
+  const theme = !isDarkMode ? t('light') : t('dark');
+  const cookieValue = document.cookie.split('; ').find((row) => row.startsWith('i18next='))?.split('=')[1];
+  console.log("cookieValue", cookieValue);
+
   return (
     <Modal icon={icon} title={t('navbar.title') as string}>
       <div className={styles.container}>
@@ -93,11 +98,8 @@ const NavbarModal: FC<INavbarModalProps> = ({ onClick, isShow = false, icon }) =
           <li className={styles.container__mobile_list__item}>
             <SelectBox
               placeholder={t('slect_language.language') as string}
-              options={[
-                { id: 1, name: t('slect_language.turkish') as string, base: 'tr' },
-                { id: 2, name: t('slect_language.english') as string, base: 'en' },
-              ]}
-              value={{ id: 2, name: t('language') as string }}
+              options={language_list}
+              value={language_list[t('lng_id') as unknown as number]}
               onClick={function (item: ICategory): void {
                 i18n.changeLanguage(item.base);
               }}
