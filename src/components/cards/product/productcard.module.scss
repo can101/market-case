@@ -49,18 +49,14 @@
     font-weight: 400;
     color: var(--dark);
   }
+
   &__price {
     color: var(--light);
     background: var(--jadeGreen);
     height: 40px;
     @include align-center;
     border-radius: 50px;
-
-    &:after {
-      //turkish lira symbol for example css code
-      content: "\20BA";
-      margin-left: 5px;
-    }
+    @include addcurrenysymbol;
   }
 
   &__category {
@@ -72,7 +68,7 @@
     word-break: break;
     text-align: center;
   }
-  
+
   &__price,
   &__category {
     width: 50%;
@@ -80,10 +76,12 @@
     font-size: .9rem;
     letter-spacing: .5px;
     text-transform: capitalize;
+
     @include mobile {
       font-size: 0.8rem;
     }
   }
+
   &__batches {
     display: flex;
     justify-content: space-between;

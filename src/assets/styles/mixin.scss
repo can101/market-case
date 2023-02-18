@@ -55,3 +55,10 @@
     padding: 5px;
   }
 }
+//turkish lira symbol for example css code mixin
+@mixin addcurrenysymbol{
+  &::after{
+    content: "\20BA";
+    margin-left: 5px;
+  }
+}
