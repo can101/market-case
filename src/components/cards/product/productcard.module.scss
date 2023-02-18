@@ -50,11 +50,8 @@
     color: var(--dark);
   }
   &__price {
-    font-size: 1rem;
-    font-weight: 500;
     color: var(--light);
     background: var(--jadeGreen);
-    width: 50%;
     height: 40px;
     @include align-center;
     border-radius: 50px;
@@ -69,21 +66,22 @@
   &__category {
     background: var(--paleJade);
     color: var(--jadeGreen);
-    width: 50%;
     height: 40px;
     border-radius: 20px;
     @include align-center;
     word-break: break;
     text-align: center;
   }
-
+  
   &__price,
   &__category {
-    font-size: 1.1rem;
-    letter-spacing: 1px;
+    width: 50%;
+    font-weight: 700;
+    font-size: .9rem;
+    letter-spacing: .5px;
+    text-transform: capitalize;
     @include mobile {
-      font-size: 0.9rem;
-      letter-spacing: 1px;
+      font-size: 0.8rem;
     }
   }
   &__batches {

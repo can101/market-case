@@ -7,7 +7,6 @@ import SelectBox from '@_atoms/form/select';
 import { ICategory } from '@/types';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '@hooks/useTheme';
-import { IoSettingsOutline } from 'react-icons/io5';
 import CircleIconButton from '@components/_atoms/buttons/circle-icon-button';
 import { AiFillHeart } from 'react-icons/ai';
 import { SlBasket } from 'react-icons/sl';
@@ -69,6 +68,7 @@ const NavbarModal: FC<INavbarModalProps> = ({ onClick, isShow = false, icon }) =
     element.click();
   };
   const [isDarkMode, setTheme] = useTheme();
+  const theme = !isDarkMode ? t('light') : t('dark')
   return (
     <Modal icon={icon} title={t('navbar.title') as string}>
       <div className={styles.container}>
@@ -86,7 +86,7 @@ const NavbarModal: FC<INavbarModalProps> = ({ onClick, isShow = false, icon }) =
           {isShow && <MobileMenu onClick={onClick} backgroundClick={backgroundClick} />}
           <li className={styles.container__mobile_list__item}>
             <div className={styles.container__mobile_list__item__inner}>
-              <span className={styles.container__mobile_list__item__inner__info_msg}>{t('theme_info', { value: !isDarkMode ? 'light' : 'dark' })}</span>
+              <span className={styles.container__mobile_list__item__inner__info_msg}>{t('theme_info', { value: theme })}</span>
               <Switch size={'sm'} onClick={setTheme} cstate={isDarkMode} />
             </div>
           </li>

@@ -4,12 +4,10 @@
   "go_to_home": "Anasayfaya Git",
   "start_shopping": "Alışverişe Başla",
   "empty_favorite_msg": "Favorileriniz Boş",
-  "empty_cart_msg": "Sepetiniz Boş",
   "empty_search_msg": "Arama sonuçları bulunamadı.",
-  "order_samuray": "Siparişiniz Özeti",
-  "subtotal": "Ara Toplam",
-  "confirm_order": "Siparişi Onayla",
   "theme_info": "tema {{value}}",
+  "light": "açık",
+  "dark": "koyu",
   "navbar": {
     "title": "Menü",
     "favorites": "Favorilerim",
@@ -66,7 +64,12 @@
     "title": "Sepetim",
     "question": "Silmek istediğinize emin misiniz?",
     "delte_to_cart": "Sepetten Sil",
-    "add_to_fovorite": "Favorilere Ekle"
+    "add_to_fovorite": "Favorilere Ekle",
+    "my_cart": "Sepetim ({{count}} Ürün)",
+    "empty_cart_msg": "Sepetiniz Boş",
+    "confirm_order": "Siparişi Onayla",
+    "order_samuray": "Siparişiniz Özeti",
+    "subtotal": "Ara Toplam"
   },
   "delivery": {
     "title": "Teslimat Bilgileri",
