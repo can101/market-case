@@ -2,7 +2,6 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 // import type { PayloadAction } from '@reduxjs/toolkit'
 import type { IProduct, IProductState } from '@/types';
 import { getAllProductsAsyncThunk } from './getAllProductsAsyncThunk';
-import { type } from 'os';
 
 const initialState: IProductState = {
     items: [],
@@ -48,7 +47,12 @@ const productSlice = createSlice({
             const res = state.temp.filter(e => regex.test(e.name));
             state.items = res;
             state.notfound = res.length === 0;
-        }
+        },
+        toogleIsFavorite(state: IProductState, action: PayloadAction<{ product: IProduct }>) {
+            const productIndex = state.items.findIndex(e => e.id === action.payload.product.id);
+            state.items[productIndex].isFavorite = !state.items[productIndex].isFavorite;
+            state.temp[productIndex].isFavorite = !state.temp[productIndex].isFavorite;
+        },
     },
     extraReducers: (builder) => {
         builder.addCase(getAllProductsAsyncThunk.pending, (state) => {

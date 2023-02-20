@@ -1,4 +1,4 @@
-import React from 'react';
+import { memo } from 'react';
 import styles from './pnf.module.scss';
 import { Player } from '@lottiefiles/react-lottie-player';
 import nfp from '@assets/json/pnf.json';
@@ -23,4 +23,4 @@ function PageNotFound(): JSX.Element {
   );
 }
 
-export default PageNotFound;
+export default memo(PageNotFound);

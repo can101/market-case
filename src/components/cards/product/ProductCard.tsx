@@ -21,7 +21,7 @@ const ProductCard: FC<IProductCardProps> = ({ item, icon, onButtonClick, onIconC
         <span className={styles.productCard__heart_box}>
           <Button size={'md'} icon={icon} onClick={onIconClick} />
         </span>
-        <img className={styles.productCard__image} src={item.image_url} />
+        <img loading={'lazy'} className={styles.productCard__image} src={item.image_url} />
       </div>
       <div className={styles.productCard__content}>
         <div className={styles.productCard__title}>{item.name}</div>

@@ -1,7 +1,7 @@
-import { RootState } from '@store/index';
 import { setTheme } from '@store/theme';
 import { useLayoutEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { useStore } from './useStore';
 
 enum Theme {
   dark = 'light',
@@ -13,7 +13,7 @@ type UseThemeReturnType = [boolean, () => void];
 export const useTheme = (): UseThemeReturnType => {
   const dispatch = useDispatch();
 
-  const { theme } = useSelector((state: RootState) => state.theme);
+  const { theme } = useStore();
 
   useLayoutEffect(() => {
     const html = document.querySelector('html');

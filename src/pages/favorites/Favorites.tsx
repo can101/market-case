@@ -1,12 +1,9 @@
-import React from 'react';
-import type { FC, ReactElement } from 'react';
-// import styles from './favorites.module.scss';
+import { FC, ReactElement, memo } from 'react';
 import EmptyLayout, { type IEmptyProps } from '@layouts/empty';
 import favoriteJson from '@assets/json/favorite.json';
 import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
-import { RootState } from '@store/index';
 import Base from '@layouts/favorite';
+import { useStore } from '@hooks/useStore';
 
 const Favorites: FC = (): ReactElement => {
   const { t } = useTranslation();
@@ -16,13 +13,13 @@ const Favorites: FC = (): ReactElement => {
     path: '/',
     srcjson: favoriteJson,
   };
-  const { items, length } = useSelector((state: RootState) => state.favorites);
+  const { favoritesLength } = useStore();
   return (
     <>
-      {length > 0 && <Base />}
-      {length === 0 && <EmptyLayout {...emptyProps} />}
+      {favoritesLength > 0 && <Base />}
+      {favoritesLength === 0 && <EmptyLayout {...emptyProps} />}
     </>
   );
 };
 
-export default Favorites;
+export default memo(Favorites);

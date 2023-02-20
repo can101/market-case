@@ -1,10 +1,7 @@
-import React from 'react';
 import styles from './delivery-info.module.scss';
 import { useTranslation } from 'react-i18next';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '@store/index';
 import { IDeliveryInfo } from '@/types';
 import { addDeliveryInfo } from '@store/delivery-info';
 // add atoms here for form elements and buttons etc.
@@ -13,6 +10,8 @@ import Textarea from '@_atoms/form/text-area';
 import FaltButton from '@_atoms/buttons/flat-button';
 import { Player } from '@lottiefiles/react-lottie-player';
 import animatePath from '@assets/json/delivery.json';
+import { useStore } from '@hooks/useStore';
+import { memo } from 'react';
 
 let validationSchema = Yup.object({
   first_name: Yup.string().min(2).required(),
@@ -36,8 +35,7 @@ const initialValues: IDeliveryInfo = {
 };
 
 const DeliveryInfo = () => {
-  const dispatch = useDispatch();
-  const delivery = useSelector((state: RootState) => state.delivery);
+  const { deliveryList, dispatch } = useStore();
 
   const { handleSubmit, handleChange, handleReset, values, errors } = useFormik({
     initialValues,
@@ -94,7 +92,7 @@ const DeliveryInfo = () => {
         </div>
       </div>
       <div className={styles.container__header}>
-        {delivery.items.map((item: IDeliveryInfo, index: number) => {
+        {deliveryList.map((item: IDeliveryInfo, index: number) => {
           return (
             <div key={index} className={styles.container__header__adress__card}>
               <div>
@@ -122,4 +120,4 @@ const DeliveryInfo = () => {
   );
 };
 
-export default DeliveryInfo;
+export default memo(DeliveryInfo);

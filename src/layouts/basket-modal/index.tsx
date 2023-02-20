@@ -8,9 +8,10 @@ import FlatButton from '@components/_atoms/buttons/flat-button';
 interface IBasketModalProps {
   onClickDelete: () => void;
   onClickAdd: () => void;
+  isFavShow: boolean
 }
 
-const NavbarModal: FC<IBasketModalProps> = ({ onClickAdd, onClickDelete }) => {
+const NavbarModal: FC<IBasketModalProps> = ({ isFavShow, onClickAdd, onClickDelete }) => {
   const backgroundClick = (): void => {
     const element = document.querySelector('#modal_header button') as HTMLDivElement;
     element.click();
@@ -32,7 +33,7 @@ const NavbarModal: FC<IBasketModalProps> = ({ onClickAdd, onClickDelete }) => {
               }, 500);
             }}
           />
-          <FlatButton
+          {!isFavShow && <FlatButton
             bgColor="primary"
             size="lg"
             type="button"
@@ -41,7 +42,7 @@ const NavbarModal: FC<IBasketModalProps> = ({ onClickAdd, onClickDelete }) => {
               onClickAdd();
               backgroundClick();
             }}
-          />
+          />}
         </div>
       </div>
     </Modal>

@@ -7,6 +7,7 @@ export interface IProduct {
     description: string;
     category: string;
     count?: number;
+    isFavorite: boolean;
 }
 
 export interface IBasketState {
@@ -30,7 +31,13 @@ export interface IProductAction {
 export interface ICategory {
     id: number;
     name: string;
-    base?: string;
+    base:string;
+}
+
+export interface ILanguage {
+    id: number;
+    name: string;
+    base:string;
 }
 
 export interface ICategoryState {
@@ -46,8 +53,8 @@ export interface IThemeState {
 export interface ISortBy {
     id: number;
     name: string;
-    nameSpace: string;
-    isReverse: boolean;
+    nameSpace?: string;
+    isReverse?: boolean;
 }
 export interface IFavoriteState {
     items: IProduct[];
@@ -69,3 +76,5 @@ export interface IDeliveryInfoState {
     items: IDeliveryInfo[];
     length: number;
 }
+
+export type ParamType = 'category' | 'products';

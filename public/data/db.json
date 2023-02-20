@@ -200,55 +200,5 @@
       "category": "Fruit",
       "image_url": "https://images.unsplash.com/photo-1543528176-61b239494933?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1174&q=80"
     }
-  ],
-  "categories": [
-    {
-      "id": 1,
-      "name": "Fruit"
-    },
-    {
-      "id": 2,
-      "name": "Bakery"
-    },
-    {
-      "id": 3,
-      "name": "Vegetable"
-    },
-    {
-      "id": 4,
-      "name": "Dairy"
-    },
-    {
-      "id": 5,
-      "name": "Meat"
-    },
-    {
-      "id": 6,
-      "name": "Snacks"
-    },
-    {
-      "id": 7,
-      "name": "Beverage"
-    },
-    {
-      "id": 8,
-      "name": "Seafood"
-    },
-    {
-      "id": 9,
-      "name": "Fast food"
-    },
-    {
-      "id": 10,
-      "name": "Dessert"
-    },
-    {
-      "id": 11,
-      "name": "Asian cuisine"
-    },
-    {
-      "id": 12,
-      "name": "Grain"
-    }
   ]
 }
