@@ -22,6 +22,21 @@
   "filter": {
     "search": "search",
     "filter_by": "filter by",
+    "filter_category": {
+      "all": "All",
+      "furit": "Fruit",
+      "bakery": "Bakery",
+      "vegetable": "Vegetable",
+      "dairy": "Dairy",
+      "meat": "Meat",
+      "snacks": "Snacks",
+      "beverage": "Beverage",
+      "seaFood": "Seafood",
+      "fastFood": "Fast food",
+      "dessert": "Dessert",
+      "asianCuisine": "Asian cuisine",
+      "grain": "Grain"
+    },
     "sort_by": {
       "title": "sort by",
       "sort_by_a_z": "A-Z",

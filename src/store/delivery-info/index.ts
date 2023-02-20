@@ -22,6 +22,7 @@ const deliverySlice = createSlice({
         addDeliveryInfo: (state: IDeliveryInfoState, action: PayloadAction<{ info: IDeliveryInfo }>) => {
             const { info } = action.payload;
             state.items.push(info);
+            state.length += 1;
         },
     }
 });

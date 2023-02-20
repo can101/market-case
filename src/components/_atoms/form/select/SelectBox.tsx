@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 import type { FC, ReactElement } from 'react';
 import styles from './selectbox.module.scss';
-import type { ICategory, ISortBy } from '@/types';
+import type { ICategory, ILanguage, ISortBy } from '@/types';
 
-type Item = ICategory | ISortBy;
+type Item = ICategory | ISortBy | ILanguage;
 interface ISelectProps {
   placeholder: string;
-  options: ICategory[] | ISortBy[];
+  options: ICategory[] | ISortBy[] | ILanguage[];
   value?: Item;
   onClick: (item: Item) => void;
   isGray?: boolean;
   size: 'sm' | 'md' | 'lg' | 'auto';
 }
 
-const SelectBox: FC<ISelectProps> = ({ options, placeholder, isGray = false, onClick, size = 'lg', value = { id: 0, name: '' } }): ReactElement => {
+const SelectBox: FC<ISelectProps> = ({ options, placeholder, isGray = false, onClick, size = 'lg', value = { id: 0, name: '', nameSpace: '', isReverse: false, base: '' } }): ReactElement => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState<Item>(value);
   const className = styles[`select__${size}`];

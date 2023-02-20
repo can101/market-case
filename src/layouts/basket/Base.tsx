@@ -1,32 +1,30 @@
-import React, { useEffect, type FC, type ReactElement } from 'react';
+import { type FC, type ReactElement } from 'react';
 import styles from './base.module.scss';
 import BasketCard from '@components/cards/basket';
 import FlatButton from '@_atoms/buttons/flat-button';
 import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '@store/index';
 import { IProduct } from '@_types/index';
 import { actions } from '@store/basket';
-import { addFavoriteItem } from '@store/favorites';
+import { actions as Products } from '@store/products';
 import { useNavigate } from 'react-router-dom';
+import { useStore } from '@hooks/useStore'
 
 const Basket: FC = (): ReactElement => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
   const { t } = useTranslation();
-  const cart = useSelector((state: RootState) => state.basket);
-  const total: number = cart.items.reduce((acc: number, b: IProduct) => acc + (b.price * (b.count as number)), 0).toFixed(2) as unknown as number;
+  const { basketList, basketLength, dispatch } = useStore()
+  const total: number = basketList.reduce((acc: number, b: IProduct) => acc + (b.price * (b.count as number)), 0).toFixed(2) as unknown as number;
   return (
     <div className={styles.basket__container}>
       <div className={styles.basket__container__inner}>
         <div className={styles.basket__header__info}>
           <span className={styles.basket__header__info__text}>
-            {t('cart.my_cart', { count: cart.length })}
+            {t('cart.my_cart', { count: basketLength })}
           </span>
         </div>
         <div className={styles.basket}>
           <div className={styles.basket__box}>
-            {cart.items.map((item: IProduct, index: number) => (
+            {basketList.map((item: IProduct, index: number) => (
               <BasketCard
                 key={index}
                 item={item}
@@ -40,7 +38,7 @@ const Basket: FC = (): ReactElement => {
                   dispatch(actions.deleteBasket({ product: item }));
                 }}
                 addFavorite={function (): void {
-                  dispatch(addFavoriteItem({ product: item }));
+                  dispatch(Products.toogleIsFavorite({ product: item }));
                 }}
               />
             ))}

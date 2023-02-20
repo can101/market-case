@@ -4,6 +4,7 @@ import styles from './basketcard.module.scss';
 import ItemCounter from '@components/item-counter';
 import { IProduct } from '@_types/index';
 import BasketModal from '@layouts/basket-modal';
+import { useStore } from '@hooks/useStore';
 
 
 interface IBasketCardProps {
@@ -15,6 +16,8 @@ interface IBasketCardProps {
 }
 
 const BasketCard: FC<IBasketCardProps> = ({ item, decrement, increment, deleteItem, addFavorite }): ReactElement => {
+  const { checkFavorite } = useStore();
+  const isFavoriteBool = checkFavorite(item);
   return (
     <article className={styles.basketcard}>
       <div className={styles.basketcard__container}>
@@ -30,7 +33,7 @@ const BasketCard: FC<IBasketCardProps> = ({ item, decrement, increment, deleteIt
         </div>
         <div className={styles.basketcard__container__price}>{(item.price * (item.count as number)).toFixed(2) as string}</div>
         <div className={styles.basketcard__container__remove}>
-          <BasketModal onClickDelete={deleteItem} onClickAdd={addFavorite} />
+          <BasketModal isFavShow={isFavoriteBool} onClickDelete={deleteItem} onClickAdd={addFavorite} />
         </div>
       </div>
     </article>

@@ -1,34 +1,25 @@
-import React, { useEffect, memo, type ReactElement } from 'react';
+import { memo, type ReactElement } from 'react';
 import styles from './home.module.scss';
-import { useDispatch, useSelector } from 'react-redux';
-import { getAllProductsAsyncThunk } from '@store/products/getAllProductsAsyncThunk';
-import type { RootState, AppDispatch } from '@/store';
 import type { IProduct } from '@/types';
 import ProductCard from '@components/cards/product';
 import Service from '@components/service';
 import Spinner from '@_atoms/spinner';
 import NewsLetter from '@components/newsletter';
-import { AiOutlineHeart } from 'react-icons/ai';
+import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
 import Filter from '@components/filter';
 import Nodata from '@components/no-data';
 import { actions } from '@store/basket';
-import { addFavoriteItem } from '@store/favorites';
+import { actions as ProductActions } from '@store/products';
+import { useStore } from '@hooks/useStore';
 
 const Home = (): ReactElement => {
-  const dispatch = useDispatch<AppDispatch>();
-
-  useEffect((): void => {
-    console.log('Home page');
-    void dispatch(getAllProductsAsyncThunk());
-  }, []);
-
-  const { items, loading, notfound } = useSelector((state: RootState) => state.products);
+  const { productList, loading, notfound, dispatch } = useStore();
 
   const addToCart = (item: IProduct): void => {
     dispatch(actions.addBasket({ product: item }));
   };
   const addFovorite = (item: IProduct): void => {
-    dispatch(addFavoriteItem({ product: item }));
+    dispatch(ProductActions.toogleIsFavorite({ product: item }));
   };
 
   return (
@@ -40,9 +31,9 @@ const Home = (): ReactElement => {
           <section className={styles.home__products}>
             {notfound && <Nodata size={70} />}
             {!notfound &&
-              items.map((item: IProduct) => (
+              productList.map((item: IProduct) => (
                 <ProductCard
-                  icon={<AiOutlineHeart />}
+                  icon={!item.isFavorite ? <AiOutlineHeart /> : <AiFillHeart />}
                   key={item.id}
                   item={item}
                   onIconClick={() => {

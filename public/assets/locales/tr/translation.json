@@ -22,6 +22,21 @@
   "filter": {
     "search": "Arama",
     "filter_by": "Filtrele",
+    "filter_category": {
+      "all": "Tüm",
+      "furit": "Meyve",
+      "bakery": "Fırın",
+      "vegetable": "Sebze",
+      "dairy": "Günlük",
+      "meat": "Et",
+      "snacks": "Atıştırmalıklar",
+      "beverage": "İçecek",
+      "seaFood": "Deniz ürünleri",
+      "fastFood": "Hazır ürünler",
+      "dessert": "Tatlı",
+      "asianCuisine": "Asya Mutfağı",
+      "grain": "Tahıl"
+    },
     "sort_by": {
       "title": "Sırala",
       "sort_by_a_z": "A-Z",

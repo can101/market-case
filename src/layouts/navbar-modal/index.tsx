@@ -4,14 +4,13 @@ import styles from './mobile-menu.module.scss';
 import Logo from '@_atoms/logo';
 import Switch from '@_atoms/form/toggle-switch';
 import SelectBox from '@_atoms/form/select';
-import { ICategory } from '@/types';
+import { ILanguage } from '@/types';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '@hooks/useTheme';
 import CircleIconButton from '@components/_atoms/buttons/circle-icon-button';
 import { AiFillHeart } from 'react-icons/ai';
 import { SlBasket } from 'react-icons/sl';
-import { useSelector } from 'react-redux';
-import { RootState } from '@store/index';
+import { useStore } from '@hooks/useStore'
 
 interface INavbarModalProps {
   onClick: (path: string) => void;
@@ -29,11 +28,12 @@ const MobileMenu: FC<IMobileMenuProps> = ({
   backgroundClick = () => { },
 }) => {
   const { t } = useTranslation();
-  const cart = useSelector((state: RootState) => state.basket);
+  const { favoritesLength, basketLength } = useStore();
   return (
     <>
       <li className={`${styles.container__mobile_list__item} ${styles.container__mobile_list__item__only_mobile}`}>
         <CircleIconButton
+          quanttiy={favoritesLength}
           size={'auto'}
           title={t('navbar.favorites') as string}
           onClick={() => {
@@ -47,7 +47,7 @@ const MobileMenu: FC<IMobileMenuProps> = ({
         <CircleIconButton
           title={t('navbar.cart') as string}
           size={'auto'}
-          quanttiy={cart.length}
+          quanttiy={basketLength}
           onClick={() => {
             backgroundClick();
             onClick('/cart');
@@ -69,11 +69,11 @@ const NavbarModal: FC<INavbarModalProps> = ({ onClick, isShow = false, icon }) =
     { id: 1, name: t('slect_language.turkish') as string, base: 'tr' },
     { id: 2, name: t('slect_language.english') as string, base: 'en' },
   ]
+  const onChangeLanguage = (lang: ILanguage) => {
+    i18n.changeLanguage(lang.base);
+  }
   const [isDarkMode, setTheme] = useTheme();
   const theme = !isDarkMode ? t('light') : t('dark');
-  const cookieValue = document.cookie.split('; ').find((row) => row.startsWith('i18next='))?.split('=')[1];
-  console.log("cookieValue", cookieValue);
-
   return (
     <Modal icon={icon} title={t('navbar.title') as string}>
       <div className={styles.container}>
@@ -100,8 +100,8 @@ const NavbarModal: FC<INavbarModalProps> = ({ onClick, isShow = false, icon }) =
               placeholder={t('slect_language.language') as string}
               options={language_list}
               value={language_list[t('lng_id') as unknown as number]}
-              onClick={function (item: ICategory): void {
-                i18n.changeLanguage(item.base);
+              onClick={(item) => {
+                onChangeLanguage(item as ILanguage)
               }}
               size={'auto'}
             />

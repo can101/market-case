@@ -1,27 +1,24 @@
-import React from 'react';
 import styles from './base.module.scss';
 import ProductCard from '@components/cards/product';
 import { IoMdClose } from 'react-icons/io';
-import { AppDispatch, RootState } from '@store/index';
-import { useDispatch, useSelector } from 'react-redux';
 import { IProduct } from '@_types/index';
 import { actions } from '@store/basket';
-import { deleteFavoriteItem } from '@store/favorites';
+import { useStore } from '@hooks/useStore';
+import { actions as ProductActions } from '@store/products';
 
 const Basket = () => {
-  const dispatch = useDispatch<AppDispatch>();
-  const { items, length } = useSelector((state: RootState) => state.favorites);
+  const { productList, favoriteList, dispatch } = useStore();
   function addToCart(item: IProduct) {
     dispatch(actions.addBasket({ product: item }));
   }
   function deleteFavorite(item: IProduct) {
-    dispatch(deleteFavoriteItem({ product: item }));
+    dispatch(ProductActions.toogleIsFavorite({ product: item }));
   }
 
   return (
     <div>
       <section className={styles.home__products}>
-        {items.map((item: IProduct) => (
+        {favoriteList.map((item: IProduct) => (
           <ProductCard
             icon={<IoMdClose />}
             key={item.id}
