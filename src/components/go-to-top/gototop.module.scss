@@ -1,0 +1,7 @@
+@use "@assets/styles/mixin.scss" as *;
+
+.container {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
