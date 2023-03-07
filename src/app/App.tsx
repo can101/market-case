@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './app.module.scss';
 import { useRoutes } from 'react-router-dom';
 import Root from '@routes/root';
@@ -9,6 +9,7 @@ import { initReactI18next } from 'react-i18next';
 import Backend from 'i18next-http-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import { Toaster } from 'react-hot-toast';
+import GoToTop from '@components/go-to-top';
 
 i18next
   .use(initReactI18next)
@@ -31,8 +32,10 @@ i18next
   });
 
 function App(): React.ReactElement {
+ 
   return (
     <>
+     <GoToTop />
       <Toaster />
       <div className={styles.container}>
         <Navbar />
