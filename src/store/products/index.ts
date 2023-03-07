@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-// import type { PayloadAction } from '@reduxjs/toolkit'
 import type { IProduct, IProductState } from '@/types';
 import { getAllProductsAsyncThunk } from './getAllProductsAsyncThunk';
+import { toast } from 'react-hot-toast';
 
 const initialState: IProductState = {
     items: [],
@@ -11,22 +11,35 @@ const initialState: IProductState = {
     temp: [],
 };
 
+interface IMessage {
+    cart_increase_msg?: string,
+    cart_decrease_msg?: string,
+    cart_delete_msg?: string,
+    cart_add_msg?: string,
+    favorite_add_msg?: string,
+    favorite_delete_msg?: string,
+    sort_by_msg?: string,
+    filter_by_msg?: string,
+}
+
 export type Params = 'name' | 'price' | 'category';
 
 const productSlice = createSlice({
     name: 'products',
     initialState,
     reducers: {
-        filterProductsCategory: (state: IProductState, action: PayloadAction<{ category: string }>) => {
+        filterProductsCategory: (state: IProductState, action: PayloadAction<{ category: string, message: IMessage }>) => {
             const { category } = action.payload;
             if (category === 'All') {
                 state.items = state.temp;
                 return;
             }
             state.items = state.temp.filter(e => e.category === category);
+            toast.success(action.payload.message.filter_by_msg as string);
         },
-        sortByPrameters: (state: IProductState, action: PayloadAction<{ params: Params, isReverse: boolean }>) => {
+        sortByPrameters: (state: IProductState, action: PayloadAction<{ params: Params, isReverse: boolean, message: IMessage }>) => {
             const params = action.payload.params || 'name';
+            toast.success(action.payload.message.sort_by_msg as string);
             const response: IProduct[] = state.items.sort((a: IProduct, b: IProduct) => {
                 if (a[params] > b[params]) {
                     return 1;
@@ -48,10 +61,11 @@ const productSlice = createSlice({
             state.items = res;
             state.notfound = res.length === 0;
         },
-        toogleIsFavorite(state: IProductState, action: PayloadAction<{ product: IProduct }>) {
+        toogleIsFavorite(state: IProductState, action: PayloadAction<{ product: IProduct, message: IMessage }>) {
             const productIndex = state.items.findIndex(e => e.id === action.payload.product.id);
             state.items[productIndex].isFavorite = !state.items[productIndex].isFavorite;
             state.temp[productIndex].isFavorite = !state.temp[productIndex].isFavorite;
+            toast.success(state.temp[productIndex].isFavorite == true ? action.payload.message.favorite_add_msg as string : action.payload.message.favorite_delete_msg as string);
         },
     },
     extraReducers: (builder) => {

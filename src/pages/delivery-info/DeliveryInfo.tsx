@@ -11,7 +11,8 @@ import FaltButton from '@_atoms/buttons/flat-button';
 import { Player } from '@lottiefiles/react-lottie-player';
 import animatePath from '@assets/json/delivery.json';
 import { useStore } from '@hooks/useStore';
-import { memo } from 'react';
+import { memo, useEffect } from 'react';
+import { toast } from 'react-hot-toast';
 
 let validationSchema = Yup.object({
   first_name: Yup.string().min(2).required(),
@@ -41,10 +42,14 @@ const DeliveryInfo = () => {
     initialValues,
     validationSchema,
     onSubmit: (values, { resetForm }) => {
-      dispatch(addDeliveryInfo({ info: values }));
+      dispatch(addDeliveryInfo({ info: values, message: t('toast_msg.add_delivery') as string }));
       resetForm();
     },
   });
+
+  useEffect(() => {
+    toast.error(t('toast_msg.required_fields'))
+  }, [Object.keys(errors).length > 0]);
   const { t } = useTranslation();
   return (
     <div className={styles.container}>
@@ -54,19 +59,19 @@ const DeliveryInfo = () => {
             <div className={styles.container__form__title}>{t('delivery.title')}</div>
             <form>
               <div className={styles.container__form__control}>
-                <Input name="first_name" size="auto" placeholder={t('delivery.first_name')} value={values.first_name} onChange={handleChange} />
-                <Input name="last_name" size="auto" placeholder={t('delivery.last_name')} value={values.last_name} onChange={handleChange} />
+                <Input name="first_name" size="auto" error={Boolean(errors.first_name)} placeholder={t('delivery.first_name')} value={values.first_name} onChange={handleChange} />
+                <Input name="last_name" size="auto" error={Boolean(errors.last_name)} placeholder={t('delivery.last_name')} value={values.last_name} onChange={handleChange} />
               </div>
               <div className={styles.container__form__control}>
-                <Input name="city" size="auto" placeholder={t('delivery.city')} value={values.city} onChange={handleChange} />
-                <Input name="district" size="auto" placeholder={t('delivery.district')} value={values.district} onChange={handleChange} />
+                <Input name="city" size="auto" error={Boolean(errors.city)} placeholder={t('delivery.city')} value={values.city} onChange={handleChange} />
+                <Input name="district" size="auto" error={Boolean(errors.district)} placeholder={t('delivery.district')} value={values.district} onChange={handleChange} />
               </div>
               <div className={styles.container__form__control}>
-                <Textarea name="address" placeholder={t('delivery.address')} size={'md'} value={values.address} onChange={handleChange} />
+                <Textarea name="address" placeholder={t('delivery.address')} error={Boolean(errors.address)} size={'md'} value={values.address} onChange={handleChange} />
               </div>
               <div className={styles.container__form__control}>
-                <Input name="door_number" size="auto" placeholder={t('delivery.door_number')} value={values.door_number as string} onChange={handleChange} />
-                <Input name="phone" size="auto" placeholder={t('delivery.phone')} value={values.phone} onChange={handleChange} />
+                <Input name="door_number" size="auto" error={Boolean(errors.door_number)} placeholder={t('delivery.door_number')} value={values.door_number as string} onChange={handleChange} />
+                <Input name="phone" size="auto" placeholder={t('delivery.phone')} error={Boolean(errors.phone)} value={values.phone} onChange={handleChange} />
               </div>
               <div className={`${styles.container__form__control} ${styles.container__form__control__buttons}`}>
                 <FaltButton type={'submit'} title={t('delivery.save') as string} size="md" onClick={handleSubmit} />

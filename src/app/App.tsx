@@ -5,9 +5,10 @@ import Root from '@routes/root';
 import Navbar from '@components/navbar';
 import Footer from '@components/footer';
 import i18next from 'i18next';
-import { useTranslation, initReactI18next } from 'react-i18next';
+import { initReactI18next } from 'react-i18next';
 import Backend from 'i18next-http-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
+import { Toaster } from 'react-hot-toast';
 
 i18next
   .use(initReactI18next)
@@ -31,11 +32,14 @@ i18next
 
 function App(): React.ReactElement {
   return (
-    <div className={styles.container}>
-      <Navbar />
-      {useRoutes(Root)}
-      <Footer />
-    </div>
+    <>
+      <Toaster />
+      <div className={styles.container}>
+        <Navbar />
+        {useRoutes(Root)}
+        <Footer />
+      </div>
+    </>
   );
 }
 

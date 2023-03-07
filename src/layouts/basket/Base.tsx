@@ -8,6 +8,7 @@ import { actions } from '@store/basket';
 import { actions as Products } from '@store/products';
 import { useNavigate } from 'react-router-dom';
 import { useStore } from '@hooks/useStore'
+import { toast } from 'react-hot-toast';
 
 const Basket: FC = (): ReactElement => {
   const navigate = useNavigate();
@@ -29,16 +30,16 @@ const Basket: FC = (): ReactElement => {
                 key={index}
                 item={item}
                 decrement={function (): void {
-                  dispatch(actions.updateBasketItemCount({ product: item, num: -1 }));
+                  dispatch(actions.updateBasketItemCount({ product: item, num: -1, message: { cart_increase_msg: t('toast_msg.increase_product') as string, cart_decrease_msg: t('toast_msg.decrease_product') as string } }));
                 }}
                 increment={function (): void {
-                  dispatch(actions.updateBasketItemCount({ product: item, num: 1 }));
+                  dispatch(actions.updateBasketItemCount({ product: item, num: 1, message: { cart_increase_msg: t('toast_msg.increase_product') as string, cart_decrease_msg: t('toast_msg.decrease_product') as string } }));
                 }}
                 deleteItem={function (): void {
-                  dispatch(actions.deleteBasket({ product: item }));
+                  dispatch(actions.deleteBasket({ product: item, message: { cart_delete_msg: t('toast_msg.delte_to_cart') as string } }));
                 }}
                 addFavorite={function (): void {
-                  dispatch(Products.toogleIsFavorite({ product: item }));
+                  dispatch(Products.toogleIsFavorite({ product: item, message: { favorite_add_msg: t('toast_msg.add_to_favorite') as string, favorite_delete_msg: t('toast_msg.delete_to_favorite') as string } }));
                 }}
               />
             ))}
@@ -59,6 +60,7 @@ const Basket: FC = (): ReactElement => {
                 type="button"
                 title={t('cart.confirm_order') as string}
                 onClick={() => {
+                  toast.success(t('toast_msg.confirm_order'))
                   navigate('/delivery-info');
                 }}
               />
