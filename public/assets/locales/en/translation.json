@@ -111,5 +111,12 @@
     "confirm_order": "Order Confirmed.",
     "theme_change": "Theme Changed",
     "required_fields": "please fill in the required fields"
+  },
+  "pages": {
+    "home": "Home Page",
+    "cart": "My Cart",
+    "delivery": "My Delivery Information",
+    "favorites": "My Favorites",
+    "not_found": "Page Not Found"
   }
 }

@@ -5,6 +5,7 @@ import cartJson from '@assets/json/cart.json';
 import { useTranslation } from 'react-i18next';
 import { useStore } from '@hooks/useStore';
 import { memo } from 'react';
+import useReTitle from '@hooks/useReTitle';
 
 function Basket(): JSX.Element {
   const { basketLength } = useStore();
@@ -15,6 +16,7 @@ function Basket(): JSX.Element {
     path: '/',
     srcjson: cartJson,
   };
+  useReTitle('pages.cart');
   return (
     <div className={styles.basket_container}>
       {basketLength > 0 && <Base />}

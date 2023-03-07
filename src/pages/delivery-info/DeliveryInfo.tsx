@@ -13,6 +13,7 @@ import animatePath from '@assets/json/delivery.json';
 import { useStore } from '@hooks/useStore';
 import { memo, useEffect } from 'react';
 import { toast } from 'react-hot-toast';
+import useReTitle from '@hooks/useReTitle';
 
 let validationSchema = Yup.object({
   first_name: Yup.string().min(2).required(),
@@ -51,6 +52,7 @@ const DeliveryInfo = () => {
     toast.error(t('toast_msg.required_fields'))
   }, [Object.keys(errors).length > 0]);
   const { t } = useTranslation();
+  useReTitle('pages.delivery');
   return (
     <div className={styles.container}>
       <div className={styles.container__content}>
