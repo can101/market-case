@@ -4,6 +4,7 @@ import favoriteJson from '@assets/json/favorite.json';
 import { useTranslation } from 'react-i18next';
 import Base from '@layouts/favorite';
 import { useStore } from '@hooks/useStore';
+import useReTitle from '@hooks/useReTitle';
 
 const Favorites: FC = (): ReactElement => {
   const { t } = useTranslation();
@@ -14,6 +15,7 @@ const Favorites: FC = (): ReactElement => {
     srcjson: favoriteJson,
   };
   const { favoritesLength } = useStore();
+  useReTitle('pages.favorites');
   return (
     <>
       {favoritesLength > 0 && <Base />}

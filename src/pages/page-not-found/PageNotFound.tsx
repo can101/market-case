@@ -5,10 +5,12 @@ import nfp from '@assets/json/pnf.json';
 import FlatButton from '@_atoms/buttons/flat-button';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import useReTitle from '@hooks/useReTitle';
 
 function PageNotFound(): JSX.Element {
   const navigate = useNavigate();
   const { t } = useTranslation();
+  useReTitle('pages.not_found');
   return (
     <div className={styles.pagenotfound}>
       <Player src={nfp} className={styles.pagenotfound__animation} autoplay loop />

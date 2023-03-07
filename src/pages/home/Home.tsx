@@ -12,6 +12,7 @@ import { actions } from '@store/basket';
 import { actions as ProductActions } from '@store/products';
 import { useStore } from '@hooks/useStore';
 import { useTranslation } from 'react-i18next';
+import useReTitle from '@hooks/useReTitle';
 
 const Home = (): ReactElement => {
   const { t } = useTranslation();
@@ -23,7 +24,7 @@ const Home = (): ReactElement => {
   const addFovorite = (item: IProduct): void => {
     dispatch(ProductActions.toogleIsFavorite({ product: item, message: { favorite_add_msg: t('toast_msg.add_to_favorite') as string, favorite_delete_msg: t('toast_msg.delete_to_favorite') as string } }));
   };
-
+  useReTitle();
   return (
     <div className={styles.home}>
       {Boolean(loading) && <Spinner />}

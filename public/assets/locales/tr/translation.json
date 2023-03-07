@@ -112,5 +112,12 @@
     "theme_change": "Tema Değiştirildi",
     "add_delivery": "Teslimat Bilgileri Eklendi",
     "required_fields": "lütfen gerekli alanları doldurunuz"
+  },
+  "pages": {
+    "home": "Ana Sayfa",
+    "cart": "Sepetim",
+    "delivery": "Teslimat Bilgilerim",
+    "favorites": "Favorilerim",
+    "not_found": "Sayfa bulunamadı"
   }
 }
