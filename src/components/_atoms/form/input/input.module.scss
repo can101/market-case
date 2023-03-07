@@ -6,18 +6,23 @@
   flex-direction: column;
   position: relative;
   height: 50px;
+
   &__sm {
     width: 200px;
   }
+
   &__md {
     width: 250px;
   }
+
   &__lg {
     width: 300px;
   }
+
   &__auto {
     width: 100%;
   }
+
   &__icon {
     position: absolute;
     @include align-center;
@@ -25,6 +30,7 @@
     top: 0;
     right: 7px;
   }
+
   &__input {
     border: 2px solid $icegrey;
     border-radius: 75px;
@@ -37,14 +43,25 @@
     color: $black;
     transition: all 0.5s ease;
     color: var(--dark);
+
     &:placeholder {
       color: $icegrey;
     }
+
     &:focus {
       border-color: $jadegreen;
       caret-color: $jadegreen;
       outline-offset: 15px;
       background: transparent;
+    }
+
+    &__error {
+      border-color: red;
+
+      &::placeholder {
+        color: red;
+        ;
+      }
     }
   }
 }

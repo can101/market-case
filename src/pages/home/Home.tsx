@@ -11,15 +11,17 @@ import Nodata from '@components/no-data';
 import { actions } from '@store/basket';
 import { actions as ProductActions } from '@store/products';
 import { useStore } from '@hooks/useStore';
+import { useTranslation } from 'react-i18next';
 
 const Home = (): ReactElement => {
+  const { t } = useTranslation();
   const { productList, loading, notfound, dispatch } = useStore();
 
   const addToCart = (item: IProduct): void => {
-    dispatch(actions.addBasket({ product: item }));
+    dispatch(actions.addBasket({ product: item, message: { cart_add_msg: t('toast_msg.add_to_cart') as string, cart_increase_msg: t('toast_msg.increase_product') as string } }));
   };
   const addFovorite = (item: IProduct): void => {
-    dispatch(ProductActions.toogleIsFavorite({ product: item }));
+    dispatch(ProductActions.toogleIsFavorite({ product: item, message: { favorite_add_msg: t('toast_msg.add_to_favorite') as string, favorite_delete_msg: t('toast_msg.delete_to_favorite') as string } }));
   };
 
   return (

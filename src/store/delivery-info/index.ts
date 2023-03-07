@@ -1,5 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { IDeliveryInfo, IDeliveryInfoState } from '@/types';
+import toast from 'react-hot-toast';
+
 const initialState: IDeliveryInfoState = {
     items: [
         {
@@ -19,8 +21,9 @@ const deliverySlice = createSlice({
     name: 'delivery',
     initialState,
     reducers: {
-        addDeliveryInfo: (state: IDeliveryInfoState, action: PayloadAction<{ info: IDeliveryInfo }>) => {
+        addDeliveryInfo: (state: IDeliveryInfoState, action: PayloadAction<{ info: IDeliveryInfo, message: string }>) => {
             const { info } = action.payload;
+            toast.success(action.payload.message as string);
             state.items.push(info);
             state.length += 1;
         },

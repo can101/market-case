@@ -98,5 +98,19 @@
     "phone": "Telefon Numarası*",
     "save": "Kaydet",
     "reset": "Sıfırla"
+  },
+  "toast_msg": {
+    "add_to_favorite": "Favorilere Eklendi.",
+    "delete_to_favorite": "Favorilerden Silindi.",
+    "sort_by": "parametreye göre sıralanmış ürünler.",
+    "filter_by": "ürünler filtrelendi.",
+    "add_to_cart": "Sepette Eklendi.",
+    "delte_to_cart": "Sepetten Ürün Silindi.",
+    "increase_product": "Ürünün Sayısı Arttı.",
+    "decrease_product": "Ürün sayısı azaldı.",
+    "confirm_order": "Sipariş Onaylandı.",
+    "theme_change": "Tema Değiştirildi",
+    "add_delivery": "Teslimat Bilgileri Eklendi",
+    "required_fields": "lütfen gerekli alanları doldurunuz"
   }
 }

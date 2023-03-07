@@ -98,5 +98,18 @@
     "phone": "Phone Number*",
     "save": "Save",
     "reset": "Reset"
+  },
+  "toast_msg": {
+    "add_to_favorite": "Added to Favorites.",
+    "delete_to_favorite": "Deleted From Favorites.",
+    "sort_by": "products sorted by parameter.",
+    "filter_by": "products filtered.",
+    "add_to_cart": "Added in Cart.",
+    "delte_to_cart": "Item Deleted from Cart.",
+    "increase_product": "The number of products has increased.",
+    "decrease_product": "Number of products decreased.",
+    "confirm_order": "Order Confirmed.",
+    "theme_change": "Theme Changed",
+    "required_fields": "please fill in the required fields"
   }
 }

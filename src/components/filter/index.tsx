@@ -12,10 +12,10 @@ const Filter = () => {
   const { dispatch } = useStore();
   const { t } = useTranslation();
   const handleClickFilter = (category: ICategory): void => {
-    dispatch(actions.filterProductsCategory({ category: category.base }));
+    dispatch(actions.filterProductsCategory({ category: category.base, message: { filter_by_msg: t('toast_msg.filter_by') as string } }));
   };
   const handleClickSort = (sort: ISortBy): void => {
-    dispatch(actions.sortByPrameters({ params: sort.nameSpace as Params, isReverse: Boolean(sort.isReverse) }));
+    dispatch(actions.sortByPrameters({ params: sort.nameSpace as Params, isReverse: Boolean(sort.isReverse), message: { sort_by_msg: t('toast_msg.sort_by') as string } }));
   };
   const sortOptions: ISortBy[] = [
     { id: 1, name: t('filter.sort_by.sort_by_a_z') as string, nameSpace: 'name' },

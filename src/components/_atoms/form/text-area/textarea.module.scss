@@ -6,20 +6,26 @@
   row-gap: 10px;
   margin-top: 5px;
   width: 100%;
+
   &__input {
     height: 120px;
+
     &__sm {
       height: 60px;
     }
+
     &__md {
       height: 90px;
     }
+
     &__lg {
       height: 120px;
     }
+
     &__xl {
       height: 150px;
     }
+
     resize: none;
     border: 2px solid var(--greyMist);
     border-radius: 20px;
@@ -30,14 +36,25 @@
     letter-spacing: 1px;
     color: var(--black);
     transition: all 0.5s ease;
+
     &:placeholder {
       color: var(--dustyGrey);
     }
+
     &:focus {
       border-color: var(--jadeGreen);
       caret-color: var(--jadeGreen);
       outline-offset: 15px;
       background: transparent;
+    }
+
+    &__error {
+      border-color: red;
+
+      &::placeholder {
+        color: red;
+        ;
+      }
     }
   }
 }
