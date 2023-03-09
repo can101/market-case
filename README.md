@@ -1,4 +1,7 @@
-# Market case study
+<img src="src/assets/images/logo.svg" height="50"/>
+
+> [case.md](CASE.md)
+<!-- # Market case study -->
 
 This is a case study for the mgreen market.
 
