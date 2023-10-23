@@ -1,7 +1,7 @@
 @use "@assets/styles/mixin" as *;
 @use "@assets/styles/variables" as *;
 
-$duration: 0.35s;
+$duration: 0.25s;
 
 .modal {
     z-index: 10000;
@@ -9,6 +9,7 @@ $duration: 0.35s;
     bottom: 0;
     left: 0;
     right: 0;
+    transition: 1s;
     background-color: var(--glass);
     position: fixed;
     margin: auto auto;
